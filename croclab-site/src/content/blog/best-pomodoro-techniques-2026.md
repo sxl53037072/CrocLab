@@ -4,7 +4,7 @@ description: "Discover the most effective Pomodoro techniques that will help you
 date: 2026-04-20
 tag: "Productivity"
 readTime: 8
-heroImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1600&q=80&auto=format"
+heroImage: "/images/blog/pomodoro-hero.webp"
 relatedProduct: "focuscroc"
 ---
 
@@ -26,7 +26,7 @@ For deep creative or technical work, try doubling the classic interval. Work for
 
 **Best for:** Programming, writing, design work, research.
 
-![Focused workspace with a timer and clean desk setup](https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=80&auto=format)
+![Focused workspace with a timer and clean desk setup](/images/blog/workspace-timer.webp)
 
 > **The golden rule of Pomodoro:** The best technique is the one you'll actually stick with. Start with the Classic 25/5, then experiment once it becomes a habit.
 

@@ -4,7 +4,7 @@ description: "探索最有效的番茄钟技巧，帮助你实现深度专注，
 date: 2026-04-20
 tag: "效率"
 readTime: 8
-heroImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1600&q=80&auto=format"
+heroImage: "/images/blog/pomodoro-hero.webp"
 relatedProduct: "focuscroc"
 ---
 
@@ -26,7 +26,7 @@ relatedProduct: "focuscroc"
 
 **最适合：** 编程、写作、设计工作、研究。
 
-![整洁的工作台上有计时器和干净的桌面](https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&q=80&auto=format)
+![整洁的工作台上有计时器和干净的桌面](/images/blog/workspace-timer.webp)
 
 > **番茄钟黄金法则：** 最好的技巧是你真正能坚持下来的那个。从经典 25/5 开始，养成习惯后再尝试其他变体。
 

@@ -4,7 +4,7 @@ description: "雨声是最有效的天然助眠剂之一。了解其原理、使
 date: 2026-04-18
 tag: "睡眠"
 readTime: 7
-heroImage: "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=1600&q=80&auto=format"
+heroImage: "/images/blog/rain-hero.webp"
 relatedProduct: "dreamtone"
 ---
 
@@ -33,7 +33,7 @@ relatedProduct: "dreamtone"
 
 当你躺在床上焦虑地胡思乱想时，雨声给大脑提供了一个中性的注意力锚点。这被称为 **内心独白的听觉遮蔽** — 声音足以防止反刍思维，但又不会刺激到让你保持清醒。
 
-![雨滴落在窗玻璃上，背景是模糊的城市灯光](https://images.unsplash.com/photo-1501691223387-dd0500403074?w=1200&q=80&auto=format)
+![雨滴落在窗玻璃上，背景是模糊的城市灯光](/images/blog/rain-window-lights.webp)
 
 > **有趣的发现：** 2019 年的一项研究发现，睡前听雨声的人第二天早上报告感觉"情感上更充分地休息了"，即使总睡眠时长与安静环境下相同。
 
@@ -67,7 +67,7 @@ relatedProduct: "dreamtone"
 | 帐篷上的雨 | 沉浸、封闭、ASMR 感 | 露营怀旧 |
 | 人行道上的雨 | 都市感、类似白噪音 | 城市公寓氛围 |
 
-![温馨的小屋内部，窗外可见雨景](https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&q=80&auto=format)
+![温馨的小屋内部，窗外可见雨景](/images/blog/forest-trees.webp)
 
 ## 如何用雨声改善睡眠
 
@@ -103,7 +103,7 @@ relatedProduct: "dreamtone"
 - **Rain Rain** — 免费应用，拥有大量雨声变体
 - **Dark Noise** — 精美的苹果生态整合
 
-![一个人在雨天窗边喝茶看书](https://images.unsplash.com/photo-1476673160081-cf065607f449?w=1200&q=80&auto=format)
+![一个人在雨天窗边喝茶看书](/images/blog/rain-window-tea.webp)
 
 ## 雨声不只是助眠
 

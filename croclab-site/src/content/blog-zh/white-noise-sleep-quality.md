@@ -4,7 +4,7 @@ description: "深入了解环境音背后的科学原理，以及它们如何帮
 date: 2026-04-10
 tag: "睡眠"
 readTime: 5
-heroImage: "https://images.unsplash.com/photo-1511295742362-92c96b1cf484?w=1600&q=80&auto=format"
+heroImage: "/images/blog/white-noise-hero.webp"
 relatedProduct: "dreamtone"
 ---
 
@@ -35,7 +35,7 @@ relatedProduct: "dreamtone"
 - 更长的深度睡眠时段
 - 更好的整体睡眠质量评分
 
-![声波可视化图，代表不同的噪音类型](https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=80&auto=format)
+![声波可视化图，代表不同的噪音类型](/images/blog/nature-forest-mist.webp)
 
 > **关键结论：** 白噪音可以将入睡时间缩短最多 38%。这意味着从躺 30 分钟睡不着，变成不到 20 分钟就进入梦乡。
 
