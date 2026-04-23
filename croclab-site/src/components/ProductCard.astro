@@ -21,7 +21,7 @@ const description = lang === 'zh' ? product.descriptionZh : product.description;
   style={`animation-delay: ${index * 100}ms`}
 >
   <div class="flex items-start justify-between mb-5">
-    <img src={product.icon} alt={product.name} class="w-14 h-14 rounded-2xl shadow-sm" />
+    <img src={product.icon} alt={product.name} class="w-14 h-14 rounded-2xl shadow-sm" width="56" height="56" loading="lazy" />
     <div class="flex gap-1.5">
       {product.platforms.ios && (
         <span class="px-2 py-1 text-[10px] font-medium rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-muted)]">iOS</span>

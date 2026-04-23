@@ -34,8 +34,11 @@ const zhPath = lang === 'en' ? `/zh${pathname === '/' ? '' : pathname}` : pathna
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="180x180" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="alternate" hreflang="en" href={`${siteUrl}${enPath}`} />
     <link rel="alternate" hreflang="zh" href={`${siteUrl}${zhPath}`} />
     <link rel="alternate" hreflang="x-default" href={`${siteUrl}${enPath}`} />
