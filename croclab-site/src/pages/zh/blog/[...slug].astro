@@ -20,7 +20,11 @@ const schema = {
   headline: post.data.title,
   description: post.data.description,
   datePublished: post.data.date.toISOString(),
-  author: { '@type': 'Organization', name: 'CrocLab', url: 'https://croclab.dev' },
+  url: `https://croclab.dev/zh/blog/${post.slug}`,
+  image: 'https://croclab.dev/og-image.png',
+  inLanguage: 'zh-CN',
+  author: { '@type': 'Organization', name: 'CrocLab', url: 'https://croclab.dev', logo: 'https://croclab.dev/images/logo/croclab-logo.png' },
+  publisher: { '@type': 'Organization', name: 'CrocLab', url: 'https://croclab.dev', logo: { '@type': 'ImageObject', url: 'https://croclab.dev/images/logo/croclab-logo.png' } },
 };
 ---
 
