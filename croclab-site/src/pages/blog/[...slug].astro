@@ -21,58 +21,104 @@ const schema = {
   description: post.data.description,
   datePublished: post.data.date.toISOString(),
   url: `https://croclab.dev/blog/${post.slug}`,
-  image: 'https://croclab.dev/og-image.png',
+  image: post.data.heroImage || 'https://croclab.dev/og-image.png',
   author: { '@type': 'Organization', name: 'CrocLab', url: 'https://croclab.dev', logo: 'https://croclab.dev/images/logo/croclab-logo.png' },
   publisher: { '@type': 'Organization', name: 'CrocLab', url: 'https://croclab.dev', logo: { '@type': 'ImageObject', url: 'https://croclab.dev/images/logo/croclab-logo.png' } },
 };
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description} lang="en" schema={schema}>
-  <article class="pt-28 pb-20">
-    <div class="mx-auto max-w-3xl px-6">
-      <div class="mb-8">
-        <a href="/blog" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors mb-6">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
-          All Posts
-        </a>
-        <div class="flex items-center gap-3 mb-4">
-          <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)]">{post.data.tag}</span>
-          <span class="text-sm text-[var(--color-text-muted)]">{formattedDate}</span>
-          <span class="text-sm text-[var(--color-text-muted)]">&middot;</span>
-          <span class="text-sm text-[var(--color-text-muted)]">{post.data.readTime} min read</span>
+  <article>
+    {post.data.heroImage && (
+      <div class="relative w-full h-[50vh] min-h-[360px] max-h-[520px] overflow-hidden">
+        <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover" loading="eager" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-10 lg:p-16">
+          <div class="mx-auto max-w-3xl">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-white/20 backdrop-blur-sm text-white">{post.data.tag}</span>
+              <span class="text-sm text-white/70">{formattedDate}</span>
+              <span class="text-sm text-white/50">&middot;</span>
+              <span class="text-sm text-white/70">{post.data.readTime} min read</span>
+            </div>
+            <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">{post.data.title}</h1>
+          </div>
         </div>
-        <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-text)] leading-tight mb-4">{post.data.title}</h1>
-        <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed">{post.data.description}</p>
       </div>
+    )}
+
+    <div class="mx-auto max-w-3xl px-6">
+      {!post.data.heroImage && (
+        <div class="pt-28 mb-8">
+          <a href="/blog" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors mb-6">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
+            All Posts
+          </a>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)]">{post.data.tag}</span>
+            <span class="text-sm text-[var(--color-text-muted)]">{formattedDate}</span>
+            <span class="text-sm text-[var(--color-text-muted)]">&middot;</span>
+            <span class="text-sm text-[var(--color-text-muted)]">{post.data.readTime} min read</span>
+          </div>
+          <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-text)] leading-tight mb-4">{post.data.title}</h1>
+          <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed">{post.data.description}</p>
+        </div>
+      )}
+
+      {post.data.heroImage && (
+        <div class="pt-8 mb-2">
+          <a href="/blog" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
+            All Posts
+          </a>
+          <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed mt-4 mb-6">{post.data.description}</p>
+        </div>
+      )}
 
       <div class="section-divider mb-10"></div>
 
       <div class="prose max-w-none
         prose-headings:font-display prose-headings:text-[var(--color-text)] prose-headings:font-bold
-        prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+        prose-h2:text-2xl prose-h2:mt-14 prose-h2:mb-5
         prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-        prose-p:text-[var(--color-text-secondary)] prose-p:leading-relaxed prose-p:mb-4
-        prose-li:text-[var(--color-text-secondary)]
+        prose-p:text-[var(--color-text-secondary)] prose-p:leading-[1.8] prose-p:mb-5 prose-p:text-[16.5px]
+        prose-li:text-[var(--color-text-secondary)] prose-li:leading-[1.8]
         prose-strong:text-[var(--color-text)]
         prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:underline
-        prose-blockquote:border-[var(--color-accent)] prose-blockquote:text-[var(--color-text-secondary)]
+        prose-blockquote:border-l-4 prose-blockquote:border-[var(--color-accent)] prose-blockquote:bg-[var(--color-bg-secondary)] prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:text-[var(--color-text-secondary)] prose-blockquote:not-italic prose-blockquote:my-8
         prose-code:text-[var(--color-accent)] prose-code:bg-[var(--color-bg-tertiary)] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
         prose-pre:bg-[var(--color-bg-secondary)] prose-pre:border prose-pre:border-[var(--color-border)] prose-pre:rounded-xl
         prose-table:text-[var(--color-text-secondary)]
-        prose-th:text-[var(--color-text)] prose-th:font-display
-        prose-td:border-[var(--color-border)]
+        prose-th:text-[var(--color-text)] prose-th:font-display prose-th:bg-[var(--color-bg-secondary)] prose-th:py-3
+        prose-td:border-[var(--color-border)] prose-td:py-3
         prose-th:border-[var(--color-border)]
-        prose-hr:border-[var(--color-border)]
-        prose-img:rounded-xl">
+        prose-hr:border-[var(--color-border)] prose-hr:my-12
+        prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8">
         <Content />
       </div>
 
       {relatedProduct && (
-        <div class="mt-16 card-elevated p-8 text-center">
-          <img src={relatedProduct.icon} alt={relatedProduct.name} class="w-12 h-12 rounded-xl mx-auto mb-3 shadow-sm" />
-          <h3 class="font-display text-xl font-bold text-[var(--color-text)] mb-2">Try {relatedProduct.name}</h3>
-          <p class="text-[var(--color-text-muted)] mb-6 max-w-md mx-auto">{relatedProduct.description}</p>
-          <a href={`/${relatedProduct.id}`} class="btn-product" style={`background: ${relatedProduct.color}`}>Learn More</a>
+        <div class="mt-16 mb-20 relative overflow-hidden rounded-2xl" style={`background: linear-gradient(135deg, ${relatedProduct.color}15, ${relatedProduct.color}05)`}>
+          <div class="p-8 sm:p-10 text-center">
+            <img src={relatedProduct.icon} alt={relatedProduct.name} class="w-16 h-16 rounded-2xl mx-auto mb-4 shadow-lg" />
+            <h3 class="font-display text-2xl font-bold text-[var(--color-text)] mb-3">Try {relatedProduct.name}</h3>
+            <p class="text-[var(--color-text-muted)] mb-6 max-w-md mx-auto leading-relaxed">{relatedProduct.description}</p>
+            <div class="flex items-center justify-center gap-4 flex-wrap">
+              <a href={`/${relatedProduct.id}`} class="btn-product" style={`background: ${relatedProduct.color}`}>Learn More</a>
+              {relatedProduct.platforms.ios && (
+                <a href={relatedProduct.platforms.ios} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--color-border)] text-sm font-medium text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                  App Store
+                </a>
+              )}
+              {relatedProduct.platforms.chrome && (
+                <a href={relatedProduct.platforms.chrome} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--color-border)] text-sm font-medium text-[var(--color-text)] hover:bg-[var(--color-bg-secondary)] transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001-3.95 6.843A12 12 0 0 0 24 12c0-.74-.067-1.464-.198-2.168z"/></svg>
+                  Chrome Web Store
+                </a>
+              )}
+            </div>
+          </div>
         </div>
       )}
     </div>

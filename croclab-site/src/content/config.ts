@@ -10,6 +10,7 @@ const blog = defineCollection({
     author: z.string().default('CrocLab'),
     tag: z.string(),
     readTime: z.number(),
+    heroImage: z.string().optional(),
     ogImage: z.string().optional(),
     relatedProduct: z.string().optional(),
   }),

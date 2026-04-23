@@ -4,6 +4,7 @@ description: "Struggling to fall asleep? These 10 science-backed techniques can 
 date: 2026-04-21
 tag: "Sleep"
 readTime: 9
+heroImage: "https://images.unsplash.com/photo-1495197359483-d092478c170a?w=1600&q=80&auto=format"
 relatedProduct: "dreamtone"
 ---
 
@@ -36,6 +37,8 @@ Developed by Dr. Andrew Weil, this breathing pattern acts as a natural tranquili
 4. Repeat 3-4 cycles
 
 **Why it works:** The extended exhale activates your parasympathetic nervous system, slowing your heart rate and signaling your body to relax. The counting also occupies your mind, preventing anxious thoughts.
+
+![Person practicing deep breathing in a calm environment](https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80&auto=format)
 
 ## 3. Ambient Sound Therapy
 
@@ -75,6 +78,10 @@ A clinical technique used in cognitive behavioral therapy for insomnia (CBT-I).
 4. After completing the sequence, take 3 deep breaths
 
 **Why it works:** The tension-release cycle creates a pronounced relaxation effect. Many people hold tension unconsciously; PMR makes you aware of it and then eliminates it.
+
+![Peaceful bedroom with warm lighting and comfortable bedding](https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80&auto=format)
+
+> **Pro tip:** The most effective approach is combining 2-3 techniques together. We call this a "sleep ritual stack" — see method #10 below.
 
 ## 6. The Temperature Drop Trick
 
@@ -138,6 +145,8 @@ Combine multiple techniques into a nightly routine:
 | ~10:30 PM | Asleep |
 
 After 2-3 weeks of consistency, your brain will associate this routine with sleep, and you'll start feeling drowsy as soon as you begin.
+
+![Night sky with stars, representing the calm of sleep](https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=1200&q=80&auto=format)
 
 ## What NOT to Do When You Can't Sleep
 

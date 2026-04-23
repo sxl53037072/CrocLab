@@ -4,6 +4,7 @@ description: "The science behind ambient sounds and how they can help you fall a
 date: 2026-04-10
 tag: "Sleep"
 readTime: 5
+heroImage: "https://images.unsplash.com/photo-1511295742362-92c96b1cf484?w=1600&q=80&auto=format"
 relatedProduct: "dreamtone"
 ---
 
@@ -33,6 +34,10 @@ Research published in the Journal of Sleep Research found that participants who 
 - Fewer nighttime awakenings
 - Longer periods of deep sleep
 - Better overall sleep quality ratings
+
+![Sound waves visualization representing different noise types](https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=80&auto=format)
+
+> **Key takeaway:** White noise reduces the time it takes to fall asleep by up to 38%. That's the difference between lying awake for 30 minutes and drifting off in under 20.
 
 ## White Noise vs. Pink Noise vs. Brown Noise
 

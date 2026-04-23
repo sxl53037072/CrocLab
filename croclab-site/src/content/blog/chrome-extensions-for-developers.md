@@ -4,6 +4,7 @@ description: "A curated list of must-have Chrome extensions that will supercharg
 date: 2026-04-15
 tag: "Development"
 readTime: 6
+heroImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1600&q=80&auto=format"
 relatedProduct: "devcodec"
 ---
 
@@ -20,6 +21,10 @@ Stop switching between random online tools. [DevCodec](/devcodec) puts JSON form
 ### JSON Viewer
 
 While DevCodec handles JSON formatting in the sidebar, a JSON Viewer extension automatically formats JSON responses when you navigate to API endpoints. Great for quick API testing.
+
+![Developer workspace with multiple monitors and code on screen](https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80&auto=format)
+
+> **Our philosophy:** The best developer tools do one thing exceptionally well, stay out of your way, and respect your privacy by processing data locally. That's exactly how we built [DevCodec](/devcodec) and [AiDock](/aidock).
 
 ## AI-Powered Tools
 
