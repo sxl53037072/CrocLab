@@ -52,8 +52,8 @@ Before diving into the rankings, here's what matters most:
 
 Calm is a meditation app that also offers sleep sounds and "Sleep Stories" narrated by celebrities. If you want an all-in-one mindfulness platform, it's a solid choice — but it's pricey.
 
-**Pros:** Huge content library, sleep stories, daily calm sessions
-**Cons:** Expensive subscription, most content locked behind paywall, heavy app
+- ✅ Huge content library, sleep stories, daily calm sessions
+- ❌ Expensive subscription, most content locked behind paywall, heavy app
 
 ### 3. Headspace — Best for Guided Wind-Down
 
@@ -61,8 +61,8 @@ Calm is a meditation app that also offers sleep sounds and "Sleep Stories" narra
 
 Similar to Calm but with a stronger focus on structured programs. Their "Sleepcasts" are unique — guided audio experiences designed for sleep.
 
-**Pros:** Great guided programs, sleepcasts, focus music
-**Cons:** Same price tier as Calm, sleep sounds are secondary feature
+- ✅ Great guided programs, sleepcasts, focus music
+- ❌ Same price tier as Calm, sleep sounds are secondary feature
 
 ### 4. myNoise — Best Sound Customization
 
@@ -70,8 +70,8 @@ Similar to Calm but with a stronger focus on structured programs. Their "Sleepca
 
 For audio nerds who want granular control, myNoise lets you adjust individual frequency bands of each soundscape. It's incredibly powerful but has a steeper learning curve.
 
-**Pros:** Unmatched customization, unique sound generators, free
-**Cons:** Dated interface, overwhelming for beginners
+- ✅ Unmatched customization, unique sound generators, free
+- ❌ Dated interface, overwhelming for beginners
 
 ### 5. Dark Noise — Best for Apple Ecosystem
 
@@ -79,8 +79,8 @@ For audio nerds who want granular control, myNoise lets you adjust individual fr
 
 A beautifully designed app for Apple users. Supports widgets, Shortcuts, and Apple Watch — great if you're deep in the Apple ecosystem.
 
-**Pros:** One-time purchase, Apple ecosystem integration, gorgeous design
-**Cons:** Smaller sound library, iOS only
+- ✅ One-time purchase, Apple ecosystem integration, gorgeous design
+- ❌ Smaller sound library, iOS only
 
 ### 6. Rain Rain — Best Free Option
 
@@ -88,8 +88,8 @@ A beautifully designed app for Apple users. Supports widgets, Shortcuts, and App
 
 If budget is the primary concern, Rain Rain offers a decent collection of sounds for free. Sound quality is good, but you'll deal with occasional ads.
 
-**Pros:** Free, decent sound library, simple interface
-**Cons:** Ads, some sounds require in-app purchases
+- ✅ Free, decent sound library, simple interface
+- ❌ Ads, some sounds require in-app purchases
 
 ### 7. Noisli — Best for Focus + Sleep
 
@@ -97,8 +97,8 @@ If budget is the primary concern, Rain Rain offers a decent collection of sounds
 
 Noisli blurs the line between a productivity tool and a sleep app. It's great for both focused work sessions and bedtime — but the sound library is smaller than dedicated sleep apps.
 
-**Pros:** Works for both focus and sleep, clean interface, web version
-**Cons:** Smaller sound library, subscription model
+- ✅ Works for both focus and sleep, clean interface, web version
+- ❌ Smaller sound library, subscription model
 
 ## Comparison Table
 
