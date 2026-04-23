@@ -15,7 +15,7 @@ export const translations = {
     'nav.about': 'About',
     'nav.contact': 'Contact',
 
-    'hero.tagline': 'Independent Developer Studio',
+    'hero.tagline': 'Creative Tech Studio',
     'hero.title': 'Crafting tools that make your digital life simpler.',
     'hero.description': 'We build focused, beautiful apps and browser extensions — one product at a time.',
     'hero.cta': 'Explore Our Products',
@@ -33,7 +33,7 @@ export const translations = {
     'blog.minRead': 'min read',
 
     'about.title': 'About CrocLab',
-    'about.description': 'CrocLab is an independent developer studio dedicated to building focused, high-quality apps and browser extensions. Our name comes from our first product, FocusCroc — the "Croc" represents persistence and precision, while "Lab" reflects our spirit of continuous experimentation.',
+    'about.description': 'CrocLab is a creative tech studio dedicated to building focused, high-quality apps and browser extensions. Our name comes from our first product, FocusCroc — the "Croc" represents persistence and precision, while "Lab" reflects our spirit of continuous experimentation.',
     'about.mission.title': 'Our Mission',
     'about.mission.text': 'To create tools that are simple, useful, and delightful. We believe great software doesn\'t need to be complex — it needs to solve real problems elegantly.',
     'about.values.title': 'Our Values',
@@ -75,7 +75,7 @@ export const translations = {
     'nav.about': '关于',
     'nav.contact': '联系',
 
-    'hero.tagline': '独立开发者工作室',
+    'hero.tagline': '创意技术工作室',
     'hero.title': '打造让数字生活更简单的工具。',
     'hero.description': '我们专注构建精美的应用和浏览器扩展——一次一个产品。',
     'hero.cta': '探索我们的产品',
@@ -93,7 +93,7 @@ export const translations = {
     'blog.minRead': '分钟阅读',
 
     'about.title': '关于 CrocLab',
-    'about.description': 'CrocLab 是一个独立开发者工作室，致力于构建专注、高品质的应用和浏览器扩展。我们的名字来源于第一个产品 FocusCroc——"Croc"代表坚韧和精准，而"Lab"体现了我们持续实验的精神。',
+    'about.description': 'CrocLab 是一个创意技术工作室，致力于构建专注、高品质的应用和浏览器扩展。我们的名字来源于第一个产品 FocusCroc——"Croc"代表坚韧和精准，而"Lab"体现了我们持续实验的精神。',
     'about.mission.title': '我们的使命',
     'about.mission.text': '创造简单、实用且令人愉悦的工具。我们相信好软件不必复杂——它需要优雅地解决真实问题。',
     'about.values.title': '我们的价值观',
