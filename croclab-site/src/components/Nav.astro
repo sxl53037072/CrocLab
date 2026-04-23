@@ -1,0 +1,112 @@
+---
+import type { Lang } from '../i18n/translations';
+import { useTranslation, getLocalizedPath, languages } from '../i18n/translations';
+
+interface Props {
+  lang: Lang;
+  currentPath?: string;
+}
+
+const { lang, currentPath = '/' } = Astro.props;
+const t = useTranslation(lang);
+
+const navLinks = [
+  { href: '/#products', label: t('nav.apps') },
+  { href: '/#extensions', label: t('nav.extensions') },
+  { href: '/blog', label: t('nav.blog') },
+  { href: '/about', label: t('nav.about') },
+  { href: '/contact', label: t('nav.contact') },
+];
+
+const otherLang = lang === 'en' ? 'zh' : 'en';
+const otherLangLabel = languages[otherLang];
+
+function getSwitchPath(): string {
+  let path = currentPath;
+  if (path.endsWith('/')) path = path.slice(0, -1);
+  if (!path) path = '/';
+
+  if (lang === 'en') {
+    return path === '/' ? '/zh' : `/zh${path}`;
+  } else {
+    const stripped = path.replace(/^\/zh/, '');
+    return stripped || '/';
+  }
+}
+const switchPath = getSwitchPath();
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-xl border-b border-[var(--color-border)]" id="main-nav">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <a href={getLocalizedPath('/', lang)} class="flex items-center gap-2.5 group">
+        <img src="/images/logo/croclab-logo.png" alt="CrocLab" class="w-8 h-8 rounded-lg transition-transform duration-300 group-hover:scale-110" />
+        <span class="font-display text-lg font-bold tracking-tight text-[var(--color-text)]">
+          Croc<span class="text-[var(--color-accent)]">Lab</span>
+        </span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-1">
+        {navLinks.map((link) => (
+          <a
+            href={getLocalizedPath(link.href, lang)}
+            class="px-3.5 py-2 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 rounded-lg hover:bg-[var(--color-bg-tertiary)]"
+          >
+            {link.label}
+          </a>
+        ))}
+        <div class="w-px h-5 bg-[var(--color-border)] mx-2"></div>
+        <a
+          href={switchPath}
+          class="px-3 py-1.5 text-xs font-medium text-[var(--color-text-muted)] hover:text-[var(--color-text)] border border-[var(--color-border)] rounded-lg hover:bg-[var(--color-bg-tertiary)] transition-all duration-200"
+        >
+          {otherLangLabel}
+        </a>
+      </div>
+
+      <button
+        class="md:hidden p-2 text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors"
+        id="mobile-menu-btn"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <path class="close-icon hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="hidden md:hidden" id="mobile-menu">
+    <div class="card mx-4 mt-2 p-4 space-y-1 shadow-lg">
+      {navLinks.map((link) => (
+        <a
+          href={getLocalizedPath(link.href, lang)}
+          class="block px-4 py-3 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-tertiary)] rounded-xl transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="section-divider my-2"></div>
+      <a
+        href={switchPath}
+        class="block px-4 py-3 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
+      >
+        {otherLangLabel}
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.querySelector('.menu-icon');
+  const closeIcon = document.querySelector('.close-icon');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+</script>

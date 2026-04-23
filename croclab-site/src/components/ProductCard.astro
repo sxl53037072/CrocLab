@@ -1,0 +1,50 @@
+---
+import type { Product } from '../data/products';
+import type { Lang } from '../i18n/translations';
+import { useTranslation, getLocalizedPath } from '../i18n/translations';
+
+interface Props {
+  product: Product;
+  lang: Lang;
+  index: number;
+}
+
+const { product, lang, index } = Astro.props;
+const t = useTranslation(lang);
+const tagline = lang === 'zh' ? product.taglineZh : product.tagline;
+const description = lang === 'zh' ? product.descriptionZh : product.description;
+---
+
+<a
+  href={getLocalizedPath(`/${product.id}`, lang)}
+  class="group card-hover p-6 lg:p-8 flex flex-col animate-on-scroll"
+  style={`animation-delay: ${index * 100}ms`}
+>
+  <div class="flex items-start justify-between mb-5">
+    <img src={product.icon} alt={product.name} class="w-14 h-14 rounded-2xl shadow-sm" />
+    <div class="flex gap-1.5">
+      {product.platforms.ios && (
+        <span class="px-2 py-1 text-[10px] font-medium rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-muted)]">iOS</span>
+      )}
+      {product.platforms.android && (
+        <span class="px-2 py-1 text-[10px] font-medium rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-muted)]">Android</span>
+      )}
+      {product.platforms.chrome && (
+        <span class="px-2 py-1 text-[10px] font-medium rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-muted)]">Chrome</span>
+      )}
+    </div>
+  </div>
+
+  <h3 class="font-display text-xl font-bold text-[var(--color-text)] mb-1 group-hover:text-[var(--color-accent)] transition-colors">
+    {product.name}
+  </h3>
+  <p class="text-sm font-medium mb-3" style={`color: ${product.color}`}>{tagline}</p>
+  <p class="text-sm text-[var(--color-text-muted)] leading-relaxed flex-1">{description}</p>
+
+  <div class="mt-6 flex items-center text-sm font-semibold text-[var(--color-text-secondary)] group-hover:text-[var(--color-accent)] transition-colors">
+    {t('products.learnMore')}
+    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  </div>
+</a>

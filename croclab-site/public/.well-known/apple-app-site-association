@@ -1,0 +1,22 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["REPLACE_TEAM_ID.com.croclab.focuscroc"],
+        "components": [
+          {
+            "/": "/focuscroc/*"
+          }
+        ]
+      },
+      {
+        "appIDs": ["REPLACE_TEAM_ID.com.croclab.dreamtone"],
+        "components": [
+          {
+            "/": "/dreamtone/*"
+          }
+        ]
+      }
+    ]
+  }
+}

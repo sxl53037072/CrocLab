@@ -1,0 +1,6 @@
+# Subdomain redirects (configure these in Cloudflare DNS + Page Rules instead)
+# These are fallback redirects for Cloudflare Pages
+
+# Old paths or common typos
+/apps /
+/extensions /#extensions

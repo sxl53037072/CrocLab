@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslation } from '../../i18n/translations';
+import type { Lang } from '../../i18n/translations';
+
+const lang: Lang = 'zh';
+const t = useTranslation(lang);
+---
+
+<BaseLayout title="联系 CrocLab" description="联系 CrocLab。" lang={lang}>
+  <section class="pt-28 pb-20">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-6">
+        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+      </div>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-[var(--color-text)] mb-4 animate-slide-up">{t('contact.title')}</h1>
+      <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed max-w-xl mx-auto mb-12 animate-slide-up" style="animation-delay: 100ms">{t('contact.description')}</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg mx-auto">
+        <a href="mailto:hello@croclab.dev" class="card-hover p-8 text-center animate-on-scroll">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-[var(--color-accent-soft)] flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          </div>
+          <h3 class="font-display font-bold text-[var(--color-text)] mb-1">{t('contact.email')}</h3>
+          <p class="text-sm text-[var(--color-text-muted)]">hello@croclab.dev</p>
+        </a>
+        <a href="https://x.com/laughallwind" target="_blank" rel="noopener noreferrer" class="card-hover p-8 text-center animate-on-scroll" style="animation-delay: 100ms">
+          <div class="w-12 h-12 mx-auto rounded-xl bg-gray-100 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-gray-800" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          </div>
+          <h3 class="font-display font-bold text-[var(--color-text)] mb-1">{t('contact.twitter')}</h3>
+          <p class="text-sm text-[var(--color-text-muted)]">@laughallwind</p>
+        </a>
+      </div>
+      <div class="mt-16 text-left max-w-xl mx-auto">
+        <h2 class="font-display text-xl font-bold text-[var(--color-text)] mb-6 text-center">常见问题</h2>
+        <div class="space-y-4">
+          <div class="card p-6 animate-on-scroll">
+            <h3 class="font-display font-bold text-[var(--color-text)] mb-2">Bug 反馈与功能请求</h3>
+            <p class="text-sm text-[var(--color-text-muted)]">如有产品相关问题，请在邮件标题中注明产品名称，我们会在 48 小时内回复。</p>
+          </div>
+          <div class="card p-6 animate-on-scroll" style="animation-delay: 100ms">
+            <h3 class="font-display font-bold text-[var(--color-text)] mb-2">媒体合作</h3>
+            <p class="text-sm text-[var(--color-text-muted)]">媒体咨询请发送邮件至 hello@croclab.dev，标题注明"媒体"。</p>
+          </div>
+          <div class="card p-6 animate-on-scroll" style="animation-delay: 200ms">
+            <h3 class="font-display font-bold text-[var(--color-text)] mb-2">商务合作</h3>
+            <p class="text-sm text-[var(--color-text-muted)]">有兴趣合作？欢迎联系。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

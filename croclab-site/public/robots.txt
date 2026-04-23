@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://croclab.dev/sitemap-index.xml

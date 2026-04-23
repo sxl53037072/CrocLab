@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getProductById } from '../../data/products';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.slug }, props: post }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+const relatedProduct = post.data.relatedProduct ? getProductById(post.data.relatedProduct) : null;
+
+const formattedDate = post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  author: { '@type': 'Organization', name: 'CrocLab', url: 'https://croclab.dev' },
+};
+---
+
+<BaseLayout title={post.data.title} description={post.data.description} lang="en" schema={schema}>
+  <article class="pt-28 pb-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="mb-8">
+        <a href="/blog" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
+          All Posts
+        </a>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)]">{post.data.tag}</span>
+          <span class="text-sm text-[var(--color-text-muted)]">{formattedDate}</span>
+          <span class="text-sm text-[var(--color-text-muted)]">&middot;</span>
+          <span class="text-sm text-[var(--color-text-muted)]">{post.data.readTime} min read</span>
+        </div>
+        <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-text)] leading-tight mb-4">{post.data.title}</h1>
+        <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed">{post.data.description}</p>
+      </div>
+
+      <div class="section-divider mb-10"></div>
+
+      <div class="prose max-w-none
+        prose-headings:font-display prose-headings:text-[var(--color-text)] prose-headings:font-bold
+        prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+        prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+        prose-p:text-[var(--color-text-secondary)] prose-p:leading-relaxed prose-p:mb-4
+        prose-li:text-[var(--color-text-secondary)]
+        prose-strong:text-[var(--color-text)]
+        prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:underline
+        prose-blockquote:border-[var(--color-accent)] prose-blockquote:text-[var(--color-text-secondary)]
+        prose-code:text-[var(--color-accent)] prose-code:bg-[var(--color-bg-tertiary)] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+        prose-pre:bg-[var(--color-bg-secondary)] prose-pre:border prose-pre:border-[var(--color-border)] prose-pre:rounded-xl
+        prose-table:text-[var(--color-text-secondary)]
+        prose-th:text-[var(--color-text)] prose-th:font-display
+        prose-td:border-[var(--color-border)]
+        prose-th:border-[var(--color-border)]
+        prose-hr:border-[var(--color-border)]
+        prose-img:rounded-xl">
+        <Content />
+      </div>
+
+      {relatedProduct && (
+        <div class="mt-16 card-elevated p-8 text-center">
+          <img src={relatedProduct.icon} alt={relatedProduct.name} class="w-12 h-12 rounded-xl mx-auto mb-3 shadow-sm" />
+          <h3 class="font-display text-xl font-bold text-[var(--color-text)] mb-2">Try {relatedProduct.name}</h3>
+          <p class="text-[var(--color-text-muted)] mb-6 max-w-md mx-auto">{relatedProduct.description}</p>
+          <a href={`/${relatedProduct.id}`} class="btn-product" style={`background: ${relatedProduct.color}`}>Learn More</a>
+        </div>
+      )}
+    </div>
+  </article>
+</BaseLayout>

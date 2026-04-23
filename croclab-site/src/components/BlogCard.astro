@@ -1,0 +1,52 @@
+---
+import type { Lang } from '../i18n/translations';
+import { useTranslation, getLocalizedPath } from '../i18n/translations';
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  date: string;
+  readTime: number;
+  tag: string;
+  lang: Lang;
+}
+
+const { title, description, slug, date, readTime, tag, lang } = Astro.props;
+const t = useTranslation(lang);
+const formattedDate = new Date(date).toLocaleDateString(lang === 'zh' ? 'zh-CN' : 'en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<a
+  href={getLocalizedPath(`/blog/${slug}`, lang)}
+  class="group card-hover p-6 flex flex-col"
+>
+  <div class="flex items-center gap-3 mb-4">
+    <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+      {tag}
+    </span>
+    <span class="text-xs text-[var(--color-text-muted)]">{formattedDate}</span>
+  </div>
+
+  <h3 class="font-display text-lg font-bold text-[var(--color-text)] mb-2 group-hover:text-[var(--color-accent)] transition-colors line-clamp-2">
+    {title}
+  </h3>
+
+  <p class="text-sm text-[var(--color-text-muted)] leading-relaxed flex-1 line-clamp-3">
+    {description}
+  </p>
+
+  <div class="mt-4 flex items-center justify-between">
+    <span class="text-xs text-[var(--color-text-muted)]">{readTime} {t('blog.minRead')}</span>
+    <span class="text-sm font-semibold text-[var(--color-text-secondary)] group-hover:text-[var(--color-accent)] transition-colors flex items-center gap-1">
+      {t('blog.readMore')}
+      <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </span>
+  </div>
+</a>

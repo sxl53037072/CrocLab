@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Blog — CrocLab" description="Tips, guides, and insights on productivity, sleep, AI, and developer tools from CrocLab." lang="en">
+  <section class="pt-28 pb-20">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-sm font-semibold uppercase tracking-widest text-purple-600 mb-3">Blog</p>
+        <h1 class="font-display text-4xl sm:text-5xl font-bold text-[var(--color-text)] mb-4 animate-slide-up">Latest from the Blog</h1>
+        <p class="text-lg text-[var(--color-text-secondary)] max-w-xl mx-auto animate-slide-up" style="animation-delay: 100ms">
+          Tips, guides, and insights on productivity, sleep, AI, and developer tools.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            slug={post.slug}
+            date={post.data.date.toISOString()}
+            readTime={post.data.readTime}
+            tag={post.data.tag}
+            lang="en"
+          />
+        ))}
+      </div>
+
+      {posts.length === 0 && (
+        <div class="text-center py-20">
+          <p class="text-[var(--color-text-muted)]">No posts yet. Check back soon!</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

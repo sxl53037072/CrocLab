@@ -1,0 +1,91 @@
+---
+import type { Lang } from '../i18n/translations';
+import { useTranslation, getLocalizedPath } from '../i18n/translations';
+import { products } from '../data/products';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslation(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="md:col-span-1">
+        <a href={getLocalizedPath('/', lang)} class="flex items-center gap-2.5 mb-4">
+          <img src="/images/logo/croclab-logo.png" alt="CrocLab" class="w-8 h-8 rounded-lg" />
+          <span class="font-display text-lg font-bold text-[var(--color-text)]">
+            Croc<span class="text-[var(--color-accent)]">Lab</span>
+          </span>
+        </a>
+        <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
+          {lang === 'en'
+            ? 'Independent developer studio crafting focused apps and browser extensions.'
+            : '独立开发者工作室，专注打造应用和浏览器扩展。'}
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold text-[var(--color-text)] mb-4 uppercase tracking-wider">{t('footer.products')}</h3>
+        <ul class="space-y-3">
+          {products.map((product) => (
+            <li>
+              <a
+                href={getLocalizedPath(`/${product.id}`, lang)}
+                class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200 flex items-center gap-2"
+              >
+                <img src={product.icon} alt={product.name} class="w-4 h-4 rounded" />
+                {product.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold text-[var(--color-text)] mb-4 uppercase tracking-wider">{t('footer.resources')}</h3>
+        <ul class="space-y-3">
+          <li><a href={getLocalizedPath('/blog', lang)} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">{t('nav.blog')}</a></li>
+          <li><a href={getLocalizedPath('/about', lang)} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">{t('nav.about')}</a></li>
+          <li><a href={getLocalizedPath('/contact', lang)} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">{t('nav.contact')}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold text-[var(--color-text)] mb-4 uppercase tracking-wider">{t('footer.legal')}</h3>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href={getLocalizedPath('/privacy', lang)}
+              class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
+            >
+              {lang === 'en' ? 'Privacy Policy' : '隐私政策'}
+            </a>
+          </li>
+          <li>
+            <a
+              href={getLocalizedPath('/terms', lang)}
+              class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
+            >
+              {lang === 'en' ? 'Terms of Service' : '服务条款'}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-divider mt-12 mb-8"></div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-[var(--color-text-muted)]">
+        &copy; {year} CrocLab. {t('footer.rights')}
+      </p>
+      <p class="text-sm text-[var(--color-text-muted)]">
+        {t('footer.madeWith')} ❤️ {t('footer.by')}
+      </p>
+    </div>
+  </div>
+</footer>

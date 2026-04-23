@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslation } from '../i18n/translations';
+import { products } from '../data/products';
+import type { Lang } from '../i18n/translations';
+
+const lang: Lang = 'en';
+const t = useTranslation(lang);
+---
+
+<BaseLayout title="About CrocLab" description="CrocLab is an independent developer studio building focused, high-quality apps and browser extensions for users worldwide." lang={lang}>
+  <section class="relative pt-28 pb-20 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80&auto=format" alt="" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-white/90"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-4xl px-6">
+      <div class="text-center mb-16">
+        <img src="/images/logo/croclab-logo.png" alt="CrocLab" class="w-16 h-16 rounded-2xl mx-auto mb-6 shadow-lg animate-slide-up" />
+        <h1 class="font-display text-4xl sm:text-5xl font-bold text-[var(--color-text)] mb-6 animate-slide-up">{t('about.title')}</h1>
+        <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed max-w-2xl mx-auto animate-slide-up" style="animation-delay: 100ms">
+          {t('about.description')}
+        </p>
+      </div>
+
+      <div class="card-elevated p-8 lg:p-12 mb-8 animate-on-scroll">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-[var(--color-accent-soft)] flex items-center justify-center">
+            <svg class="w-5 h-5 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          </div>
+          <h2 class="font-display text-2xl font-bold text-[var(--color-text)]">{t('about.mission.title')}</h2>
+        </div>
+        <p class="text-[var(--color-text-secondary)] leading-relaxed text-lg">{t('about.mission.text')}</p>
+      </div>
+
+      <div class="card-elevated p-8 lg:p-12 mb-16 animate-on-scroll">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center">
+            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+          </div>
+          <h2 class="font-display text-2xl font-bold text-[var(--color-text)]">{t('about.values.title')}</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="flex items-start gap-4">
+            <svg class="w-5 h-5 text-[var(--color-accent)] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <p class="text-[var(--color-text-secondary)]">{t('about.values.quality')}</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <p class="text-[var(--color-text-secondary)]">{t('about.values.privacy')}</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <svg class="w-5 h-5 text-purple-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <p class="text-[var(--color-text-secondary)]">{t('about.values.simple')}</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <svg class="w-5 h-5 text-blue-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <p class="text-[var(--color-text-secondary)]">{t('about.values.global')}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="font-display text-2xl font-bold text-[var(--color-text)] mb-2">Our Products</h2>
+        <p class="text-[var(--color-text-muted)]">The tools we've built so far</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {products.map((product, i) => (
+          <a href={`/${product.id}`} class="card-hover p-6 text-center animate-on-scroll" style={`animation-delay: ${i * 100}ms`}>
+            <img src={product.icon} alt={product.name} class="w-12 h-12 rounded-xl mx-auto mb-3 shadow-sm" />
+            <h3 class="font-display font-bold text-[var(--color-text)] text-sm">{product.name}</h3>
+            <p class="text-xs text-[var(--color-text-muted)] mt-1">{product.type === 'app' ? 'Mobile App' : 'Chrome Extension'}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

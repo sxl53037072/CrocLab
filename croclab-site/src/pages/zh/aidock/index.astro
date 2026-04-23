@@ -1,0 +1,8 @@
+---
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import { getProductById } from '../../../data/products';
+
+const product = getProductById('aidock')!;
+---
+
+<ProductLayout product={product} lang="zh" />
