@@ -41,8 +41,27 @@ async function handleRequest(request) {
     });
   }
 
-  const proxiedPath =
-    url.pathname === "/" ? app.pathPrefix + "/" : app.pathPrefix + url.pathname;
+  const isStaticAsset =
+    url.pathname.startsWith("/_astro/") ||
+    url.pathname.startsWith("/images/") ||
+    url.pathname.startsWith("/assets/") ||
+    url.pathname === "/favicon.png" ||
+    url.pathname === "/og-image.png" ||
+    url.pathname === "/robots.txt" ||
+    url.pathname === "/sitemap-index.xml";
+
+  // Keep static assets at root paths, only map page routes to app prefix.
+  let proxiedPath;
+  if (isStaticAsset) {
+    proxiedPath = url.pathname;
+  } else if (url.pathname === "/") {
+    proxiedPath = app.pathPrefix + "/";
+  } else if (url.pathname.startsWith(app.pathPrefix + "/")) {
+    proxiedPath = url.pathname;
+  } else {
+    proxiedPath = app.pathPrefix + url.pathname;
+  }
+
   const target = "https://croclab.dev" + proxiedPath + url.search;
 
   return fetch(target, {
