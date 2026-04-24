@@ -50,16 +50,17 @@ async function handleRequest(request) {
     url.pathname === "/robots.txt" ||
     url.pathname === "/sitemap-index.xml";
 
-  // Keep static assets at root paths, only map page routes to app prefix.
+  // Keep static assets at root paths.
+  // Routing strategy for subdomains:
+  // - "/" => app landing page (/focuscroc/ or /dreamtone/)
+  // - other paths => main site same path (so nav/footer links work normally)
   let proxiedPath;
   if (isStaticAsset) {
     proxiedPath = url.pathname;
   } else if (url.pathname === "/") {
     proxiedPath = app.pathPrefix + "/";
-  } else if (url.pathname.startsWith(app.pathPrefix + "/")) {
-    proxiedPath = url.pathname;
   } else {
-    proxiedPath = app.pathPrefix + url.pathname;
+    proxiedPath = url.pathname;
   }
 
   const target = "https://croclab.dev" + proxiedPath + url.search;
