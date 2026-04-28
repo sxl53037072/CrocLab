@@ -4,3 +4,37 @@
 # Old paths or common typos
 /apps /
 /extensions /#extensions
+
+# Canonicalize common pages to trailing slash (avoid platform default 308)
+/about https://croclab.dev/about/ 301
+/blog https://croclab.dev/blog/ 301
+/contact https://croclab.dev/contact/ 301
+/privacy https://croclab.dev/privacy/ 301
+/terms https://croclab.dev/terms/ 301
+
+/aidock https://croclab.dev/aidock/ 301
+/aidock/privacy https://croclab.dev/aidock/privacy/ 301
+/aidock/terms https://croclab.dev/aidock/terms/ 301
+
+/devcodec https://croclab.dev/devcodec/ 301
+/devcodec/privacy https://croclab.dev/devcodec/privacy/ 301
+/devcodec/terms https://croclab.dev/devcodec/terms/ 301
+
+/dreamtone https://croclab.dev/dreamtone/ 301
+/dreamtone/privacy https://croclab.dev/dreamtone/privacy/ 301
+/dreamtone/terms https://croclab.dev/dreamtone/terms/ 301
+
+/focuscroc https://croclab.dev/focuscroc/ 301
+/focuscroc/privacy https://croclab.dev/focuscroc/privacy/ 301
+/focuscroc/terms https://croclab.dev/focuscroc/terms/ 301
+
+/zh/about https://croclab.dev/zh/about/ 301
+/zh/blog https://croclab.dev/zh/blog/ 301
+/zh/contact https://croclab.dev/zh/contact/ 301
+/zh/privacy https://croclab.dev/zh/privacy/ 301
+/zh/terms https://croclab.dev/zh/terms/ 301
+
+/zh/aidock https://croclab.dev/zh/aidock/ 301
+/zh/devcodec https://croclab.dev/zh/devcodec/ 301
+/zh/dreamtone https://croclab.dev/zh/dreamtone/ 301
+/zh/focuscroc https://croclab.dev/zh/focuscroc/ 301
