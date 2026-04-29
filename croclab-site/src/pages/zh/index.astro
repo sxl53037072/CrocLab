@@ -4,6 +4,7 @@ import ProductCard from '../../components/ProductCard.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import { products, getAppProducts, getExtensionProducts } from '../../data/products';
 import { useTranslation } from '../../i18n/translations';
+import { getCollection } from 'astro:content';
 import type { Lang } from '../../i18n/translations';
 
 const lang: Lang = 'zh';
@@ -11,11 +12,18 @@ const t = useTranslation(lang);
 const apps = getAppProducts();
 const extensions = getExtensionProducts();
 
-const blogPosts = [
-  { title: '2026 年 7 款最佳睡眠白噪音 App 对比评测', description: '我们实测了 20+ 款睡眠音效 App，为你挑出最好的 7 款。', slug: 'best-sleep-sounds-app-2026', date: '2026-04-22', readTime: 10, tag: '睡眠' },
-  { title: '如何 5 分钟内入睡 — 10 种科学方法', description: '难以入睡？这 10 种经过科学验证的技巧可以帮你更快入睡。', slug: 'how-to-fall-asleep-fast', date: '2026-04-21', readTime: 9, tag: '睡眠' },
-  { title: '2026 年深度工作的 5 种最佳番茄工作法技巧', description: '探索最有效的番茄工作法技巧，帮助你实现深度专注。', slug: 'best-pomodoro-techniques-2026', date: '2026-04-20', readTime: 8, tag: '效率' },
-];
+const allPosts = await getCollection('blog-zh');
+const blogPosts = allPosts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
+  .map((post) => ({
+    title: post.data.title,
+    description: post.data.description,
+    slug: post.slug,
+    date: post.data.date.toISOString().split('T')[0],
+    readTime: post.data.readTime,
+    tag: post.data.tag,
+  }));
 ---
 
 <BaseLayout title="CrocLab — 打造让数字生活更简单的工具" description="CrocLab 是一个创意技术工作室，专注打造高品质的应用和浏览器扩展。" lang={lang}>

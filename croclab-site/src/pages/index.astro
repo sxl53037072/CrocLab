@@ -4,6 +4,7 @@ import ProductCard from '../components/ProductCard.astro';
 import BlogCard from '../components/BlogCard.astro';
 import { products, getAppProducts, getExtensionProducts } from '../data/products';
 import { useTranslation } from '../i18n/translations';
+import { getCollection } from 'astro:content';
 import type { Lang } from '../i18n/translations';
 
 const lang: Lang = 'en';
@@ -12,32 +13,18 @@ const t = useTranslation(lang);
 const apps = getAppProducts();
 const extensions = getExtensionProducts();
 
-const blogPosts = [
-  {
-    title: '7 Best Sleep Sound Apps in 2026 — Tested and Compared',
-    description: 'We tested 20+ sleep sound apps so you don\'t have to. Here are the 7 best apps for falling asleep faster.',
-    slug: 'best-sleep-sounds-app-2026',
-    date: '2026-04-22',
-    readTime: 10,
-    tag: 'Sleep',
-  },
-  {
-    title: 'How to Fall Asleep in 5 Minutes — 10 Science-Backed Methods',
-    description: 'Struggling to fall asleep? These 10 science-backed techniques can help you fall asleep faster.',
-    slug: 'how-to-fall-asleep-fast',
-    date: '2026-04-21',
-    readTime: 9,
-    tag: 'Sleep',
-  },
-  {
-    title: '5 Best Pomodoro Techniques for Deep Work in 2026',
-    description: 'Discover the most effective Pomodoro techniques that will help you achieve deep focus and get more done every day.',
-    slug: 'best-pomodoro-techniques-2026',
-    date: '2026-04-20',
-    readTime: 8,
-    tag: 'Productivity',
-  },
-];
+const allPosts = await getCollection('blog');
+const blogPosts = allPosts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
+  .map((post) => ({
+    title: post.data.title,
+    description: post.data.description,
+    slug: post.slug,
+    date: post.data.date.toISOString().split('T')[0],
+    readTime: post.data.readTime,
+    tag: post.data.tag,
+  }));
 
 const schema = {
   '@context': 'https://schema.org',
