@@ -81,7 +81,7 @@ Pink noise has the strongest research support for sleep enhancement:
 
 ### Why It's Our Top Recommendation for Sleep
 
-Pink noise hits a sweet spot: it's rich enough to mask environmental sounds, warm enough to avoid the harshness of white noise, and scientifically validated for improving sleep quality. If you're choosing one noise color for sleep, start here.
+Pink noise hits a sweet spot: it's rich enough to mask environmental sounds, warm enough to avoid the harshness of white noise, and scientifically validated for improving sleep quality. If you're choosing one noise color for sleep, start here. [Rain sounds](/blog/rain-sounds-for-sleeping/) are one of the most common forms of natural pink noise.
 
 ## Brown Noise (Brownian Noise)
 
@@ -223,7 +223,7 @@ Noise colors aren't a fad — they're grounded in acoustic science and supported
 4. **Layering** noise with natural sounds prevents habituation and enhances effectiveness
 5. **Personal preference matters** — try each one for 2-3 nights before deciding
 
-The best part? Trying them is completely free and risk-free. Open [DreamTone](/dreamtone), pick a noise color, add a nature sound layer if you like, and see what works for you.
+The best part? Trying them is completely free and risk-free. Open [DreamTone](/dreamtone/), pick a noise color, add a nature sound layer if you like, and see what works for you. For detailed app recommendations, see our [best brown noise apps for ADHD focus](/blog/best-brown-noise-apps-adhd-focus/) and [best sleep sound apps](/blog/best-sleep-sounds-app-2026/) guides.
 
 [Download DreamTone free →](https://apps.apple.com/us/app/dreamtone-sleep-sounds/id6762450717)
 

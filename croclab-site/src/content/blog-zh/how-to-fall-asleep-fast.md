@@ -50,7 +50,7 @@ relatedProduct: "dreamtone"
 3. 保持低音量 — 刚好能遮蔽环境噪音即可
 4. 设置 30-60 分钟的定时器，入睡后自动停止
 
-**为什么有效：** 环境音遮蔽干扰噪音，减少认知反刍，并随时间形成条件性睡眠联想。2021 年的一项荟萃分析发现，声音疗法平均缩短入睡时间 12 分钟。
+**为什么有效：** 环境音遮蔽干扰噪音，减少认知反刍，并随时间形成条件性睡眠联想。2021 年的一项荟萃分析发现，声音疗法平均缩短入睡时间 12 分钟。了解更多关于[白噪音如何改善睡眠质量](/zh/blog/white-noise-sleep-quality/)以及[为什么雨声对睡眠特别有效](/zh/blog/rain-sounds-for-sleeping/)。
 
 **试试 [DreamTone](/zh/dreamtone)** — 30+ 精心制作的声景，配有智能睡眠定时器，音量渐变淡出。
 
@@ -126,7 +126,7 @@ relatedProduct: "dreamtone"
 **操作方法：**
 - 睡前 30-60 分钟停止使用屏幕
 - 如果必须用设备，开启 Night Shift / 蓝光滤镜
-- 用音频代替刷手机 — 像 [DreamTone](/zh/dreamtone) 的环境音或有声书
+- 用音频代替刷手机 — 像 [DreamTone](/zh/dreamtone/) 的环境音或有声书。不确定用哪种噪音颜色？查看我们的[噪音颜色完全指南](/zh/blog/white-noise-brown-noise-pink-noise-guide/)
 
 **为什么有效：** 蓝光最多可抑制 50% 的褪黑素产生。即使开启了 Night Shift，社交媒体和新闻的认知刺激也会让大脑保持警觉状态。
 

@@ -6,7 +6,7 @@ interface Props {
   canonicalUrl?: string;
   type?: string;
   noindex?: boolean;
-  schema?: Record<string, unknown>;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
@@ -56,6 +56,9 @@ const isZh = Astro.url.pathname.startsWith('/zh');
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullOgImage} />
 
-{schema && (
+{schema && !Array.isArray(schema) && (
   <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
 )}
+{schema && Array.isArray(schema) && schema.map((s) => (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(s)} />
+))}

@@ -81,7 +81,7 @@ relatedProduct: "dreamtone"
 
 ### 为什么它是我们的首选睡眠推荐
 
-粉噪音击中了最佳平衡点：它足够丰富以遮蔽环境声音，足够温暖以避免白噪音的刺耳感，并且经过科学验证能改善睡眠质量。如果你只选一种噪音颜色用于睡眠，从这里开始。
+粉噪音击中了最佳平衡点：它足够丰富以遮蔽环境声音，足够温暖以避免白噪音的刺耳感，并且经过科学验证能改善睡眠质量。如果你只选一种噪音颜色用于睡眠，从这里开始。[雨声](/zh/blog/rain-sounds-for-sleeping/)是最常见的自然粉噪音形式之一。
 
 ## 棕噪音（布朗噪音）
 
@@ -210,7 +210,7 @@ relatedProduct: "dreamtone"
 4. **叠加**噪音与自然声音可以防止听觉适应并增强效果
 5. **个人偏好很重要**——每种都试 2-3 晚再做决定
 
-最棒的是？尝试完全免费且无风险。打开 [DreamTone](/dreamtone)，选一种噪音颜色，按喜好添加一层自然声音，看看哪种适合你。
+最棒的是？尝试完全免费且无风险。打开 [DreamTone](/zh/dreamtone/)，选一种噪音颜色，按喜好添加一层自然声音，看看哪种适合你。如需详细的 App 推荐，请阅读我们的 [ADHD 专注棕噪音 App 推荐](/zh/blog/best-brown-noise-apps-adhd-focus/) 和 [最佳睡眠音效 App 对比](/zh/blog/best-sleep-sounds-app-2026/)。
 
 [免费下载 DreamTone →](https://apps.apple.com/us/app/dreamtone-sleep-sounds/id6762450717)
 

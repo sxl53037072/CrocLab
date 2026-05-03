@@ -162,7 +162,7 @@ But ultimately, the best app is the one you'll actually use. Download two or thr
 2. **Use the same app every day.** Switching between apps resets your progress data and breaks any streak momentum.
 3. **Put your phone face-down during sessions.** Even a timer app can become a distraction if you keep checking it.
 4. **Pair your timer with ambient sounds.** Studies show that background noise (especially [pink or brown noise](/blog/white-noise-brown-noise-pink-noise-guide)) improves focus by masking distracting environmental sounds.
-5. **Track days, not hours.** A 5-minute study day is infinitely better than a 0-minute day. The streak matters more than the duration.
+5. **Track days, not hours.** A 5-minute study day is infinitely better than a 0-minute day. The streak matters more than the duration. Learn more in our guide on [building a consistent study habit](/blog/how-to-build-consistent-study-habit/) and discover the [5 best Pomodoro techniques for deep work](/blog/best-pomodoro-techniques-2026/).
 
 ---
 

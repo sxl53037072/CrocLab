@@ -172,7 +172,7 @@ You don't need to wait until Monday. You don't need a perfect plan. You don't ne
 
 You need 5 minutes and something to track your streak with.
 
-Open your textbook, watch one lecture video, review one chapter of notes. Mark the day as done. Tomorrow, do it again.
+Open your textbook, watch one lecture video, review one chapter of notes. Mark the day as done. Tomorrow, do it again. Looking for the right timer? See our [best study timer apps comparison](/blog/best-study-timer-apps-2026/) or try the [best Pomodoro techniques for deep work](/blog/best-pomodoro-techniques-2026/).
 
 That's it. That's the entire system.
 

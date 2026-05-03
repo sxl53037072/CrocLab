@@ -12,19 +12,61 @@ const post = Astro.props;
 const { Content } = await post.render();
 const relatedProduct = post.data.relatedProduct ? getProductById(post.data.relatedProduct) : null;
 
+const allPosts = await getCollection('blog');
+const relatedPosts = allPosts
+  .filter((p) => p.slug !== post.slug && p.data.tag === post.data.tag)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
 const formattedDate = post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: post.data.title,
-  description: post.data.description,
-  datePublished: post.data.date.toISOString(),
-  url: `https://croclab.dev/blog/${post.slug}`,
-  image: post.data.heroImage || 'https://croclab.dev/og-image.png',
-  author: { '@type': 'Organization', name: 'CrocLab', url: 'https://croclab.dev', logo: 'https://croclab.dev/images/logo/croclab-logo.png' },
-  publisher: { '@type': 'Organization', name: 'CrocLab', url: 'https://croclab.dev', logo: { '@type': 'ImageObject', url: 'https://croclab.dev/images/logo/croclab-logo.png' } },
-};
+// Extract FAQ from raw markdown body
+function extractFAQ(body: string) {
+  const faqItems: { question: string; answer: string }[] = [];
+  const faqMatch = body.match(/## FAQ[\s\S]*$/m);
+  if (!faqMatch) return faqItems;
+  const faqSection = faqMatch[0];
+  const qaPairs = faqSection.match(/\*\*Q:\s*(.+?)\*\*\s*\nA:\s*([\s\S]*?)(?=\n\n\*\*Q:|\n\n##|\s*$)/g);
+  if (!qaPairs) return faqItems;
+  for (const pair of qaPairs) {
+    const qMatch = pair.match(/\*\*Q:\s*(.+?)\*\*/);
+    const aMatch = pair.match(/A:\s*([\s\S]*?)$/);
+    if (qMatch && aMatch) {
+      faqItems.push({ question: qMatch[1].trim(), answer: aMatch[1].trim() });
+    }
+  }
+  return faqItems;
+}
+
+const faqItems = extractFAQ(post.body);
+
+const schemas: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.data.title,
+    description: post.data.description,
+    datePublished: post.data.date.toISOString(),
+    url: `https://croclab.dev/blog/${post.slug}/`,
+    image: post.data.heroImage ? `https://croclab.dev${post.data.heroImage}` : 'https://croclab.dev/og-image.png',
+    author: { '@type': 'Organization', name: 'CrocLab', url: 'https://croclab.dev', logo: 'https://croclab.dev/images/logo/croclab-logo.png' },
+    publisher: { '@type': 'Organization', name: 'CrocLab', url: 'https://croclab.dev', logo: { '@type': 'ImageObject', url: 'https://croclab.dev/images/logo/croclab-logo.png' } },
+  },
+];
+
+if (faqItems.length > 0) {
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  });
+}
+
+const schema = schemas.length === 1 ? schemas[0] : schemas;
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description} lang="en" schema={schema}>
@@ -96,6 +138,21 @@ const schema = {
         prose-img:rounded-2xl prose-img:shadow-lg prose-img:my-8">
         <Content />
       </div>
+
+      {relatedPosts.length > 0 && (
+        <div class="mt-16 mb-8">
+          <h2 class="font-display text-2xl font-bold text-[var(--color-text)] mb-6">Related Articles</h2>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedPosts.map((rp) => (
+              <a href={`/blog/${rp.slug}/`} class="group block rounded-xl border border-[var(--color-border)] p-5 hover:border-[var(--color-accent)] transition-colors">
+                <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)]">{rp.data.tag}</span>
+                <h3 class="font-display text-base font-semibold text-[var(--color-text)] mt-2 mb-1 group-hover:text-[var(--color-accent)] transition-colors leading-snug">{rp.data.title}</h3>
+                <p class="text-sm text-[var(--color-text-muted)] line-clamp-2">{rp.data.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       {relatedProduct && (
         <div class="mt-16 mb-20 relative overflow-hidden rounded-2xl" style={`background: linear-gradient(135deg, ${relatedProduct.color}15, ${relatedProduct.color}05)`}>

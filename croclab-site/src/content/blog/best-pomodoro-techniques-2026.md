@@ -56,7 +56,7 @@ Work for three intense Pomodoros (25 minutes each with 5-minute breaks), then ta
 
 ## Try These Techniques with FocusCroc
 
-[FocusCroc](/focuscroc) is designed to support all these Pomodoro variations. With customizable intervals, focus statistics, and gentle reminders, it's the perfect companion for your deep work sessions.
+[FocusCroc](/focuscroc/) is designed to support all these Pomodoro variations. With customizable intervals, focus statistics, and gentle reminders, it's the perfect companion for your deep work sessions. Want to build a daily study habit? Read our guide on [the streak method that actually works](/blog/how-to-build-consistent-study-habit/) and see how FocusCroc compares to other apps in our [best study timer apps comparison](/blog/best-study-timer-apps-2026/).
 
 [Download FocusCroc on the App Store →](https://apps.apple.com/us/app/focuscroc/id6757192119)
 

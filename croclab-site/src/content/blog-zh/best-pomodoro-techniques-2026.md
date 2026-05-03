@@ -56,7 +56,7 @@ relatedProduct: "focuscroc"
 
 ## 用 FocusCroc 试试这些技巧
 
-[FocusCroc](/zh/focuscroc) 专为支持所有这些番茄钟变体而设计。可自定义间隔、专注统计和温和的提醒，是你深度工作的完美搭档。
+[FocusCroc](/zh/focuscroc/) 专为支持所有这些番茄钟变体而设计。可自定义间隔、专注统计和温和的提醒，是你深度工作的完美搭档。想养成每日学习习惯？阅读我们的[连续打卡方法指南](/zh/blog/how-to-build-consistent-study-habit/)，并查看[最佳学习计时 App 对比](/zh/blog/best-study-timer-apps-2026/)。
 
 [在 App Store 下载 FocusCroc →](https://apps.apple.com/us/app/focuscroc/id6757192119)
 

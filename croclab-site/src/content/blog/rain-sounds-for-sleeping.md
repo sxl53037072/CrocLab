@@ -89,7 +89,7 @@ Research shows that **30-60 minutes** is the optimal duration. You want the rain
 
 ### Step 4: Be Consistent
 
-Like any sleep hygiene practice, rain sounds work best when they're part of a routine. Your brain will begin to associate the sound with sleep, creating a **conditioned relaxation response** that makes falling asleep faster over time.
+Like any sleep hygiene practice, rain sounds work best when they're part of a routine. Your brain will begin to associate the sound with sleep, creating a **conditioned relaxation response** that makes falling asleep faster over time. For a complete bedtime routine, see our guide on [how to fall asleep in 5 minutes](/blog/how-to-fall-asleep-fast/).
 
 ## Best Apps for Rain Sounds
 
@@ -109,7 +109,7 @@ Like any sleep hygiene practice, rain sounds work best when they're part of a ro
 
 Rain sounds aren't just for bedtime:
 
-- **Focus and study** — Many people find rain sounds ideal for concentration (see the Pomodoro technique with [FocusCroc](/focuscroc))
+- **Focus and study** — Many people find rain sounds ideal for concentration (see the Pomodoro technique with [FocusCroc](/focuscroc/)). For the best apps, check our [sleep sounds app comparison](/blog/best-sleep-sounds-app-2026/) and [complete noise colors guide](/blog/white-noise-brown-noise-pink-noise-guide/)
 - **Meditation** — Use as a background for mindfulness practice
 - **Anxiety relief** — The parasympathetic response works during the day too
 - **Reading** — Creates a cozy atmosphere for deep reading

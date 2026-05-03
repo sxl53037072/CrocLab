@@ -6,9 +6,27 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'CrocLab Blog',
+  description: 'Tips, guides, and insights on productivity, sleep, AI, and developer tools from CrocLab.',
+  url: 'https://croclab.dev/blog/',
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: posts.length,
+    itemListElement: posts.map((post, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `https://croclab.dev/blog/${post.slug}/`,
+      name: post.data.title,
+    })),
+  },
+};
 ---
 
-<BaseLayout title="Blog — CrocLab" description="Tips, guides, and insights on productivity, sleep, AI, and developer tools from CrocLab." lang="en">
+<BaseLayout title="Blog — CrocLab" description="Tips, guides, and insights on productivity, sleep, AI, and developer tools from CrocLab." lang="en" schema={schema}>
   <section class="pt-28 pb-20">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="text-center mb-16">

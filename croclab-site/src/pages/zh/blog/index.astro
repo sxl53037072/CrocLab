@@ -6,9 +6,27 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog-zh')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'CrocLab 博客',
+  description: '关于效率、睡眠、AI 和开发工具的技巧、指南和洞察。',
+  url: 'https://croclab.dev/zh/blog/',
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: posts.length,
+    itemListElement: posts.map((post, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `https://croclab.dev/zh/blog/${post.slug}/`,
+      name: post.data.title,
+    })),
+  },
+};
 ---
 
-<BaseLayout title="博客 — CrocLab" description="关于效率、睡眠、AI 和开发工具的技巧、指南和洞察。" lang="zh">
+<BaseLayout title="博客 — CrocLab" description="关于效率、睡眠、AI 和开发工具的技巧、指南和洞察。" lang="zh" schema={schema}>
   <section class="pt-28 pb-20">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="text-center mb-16">

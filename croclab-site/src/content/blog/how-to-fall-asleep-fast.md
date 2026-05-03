@@ -50,7 +50,7 @@ Using consistent background sounds — rain, ocean waves, white noise, or nature
 3. Keep the volume low — just loud enough to mask environmental noise
 4. Set a timer for 30-60 minutes so it stops after you fall asleep
 
-**Why it works:** Ambient sounds mask disruptive noises, reduce cognitive rumination, and create a conditioned sleep association over time. A 2021 meta-analysis found that sound therapy reduced sleep onset by an average of 12 minutes.
+**Why it works:** Ambient sounds mask disruptive noises, reduce cognitive rumination, and create a conditioned sleep association over time. A 2021 meta-analysis found that sound therapy reduced sleep onset by an average of 12 minutes. Learn more about [how white noise improves sleep quality](/blog/white-noise-sleep-quality/) and [why rain sounds are particularly effective](/blog/rain-sounds-for-sleeping/).
 
 **Try it with [DreamTone](/dreamtone)** — 30+ handcrafted soundscapes with a smart sleep timer that fades out gradually.
 
@@ -126,7 +126,7 @@ The foundation of good sleep hygiene.
 **How to do it:**
 - Stop using screens 30-60 minutes before bed
 - If you must use devices, enable Night Shift / blue light filter
-- Replace scrolling with audio — like ambient sounds from [DreamTone](/dreamtone) or an audiobook
+- Replace scrolling with audio — like ambient sounds from [DreamTone](/dreamtone/) or an audiobook. Not sure which noise color to use? Check out our [complete guide to noise colors](/blog/white-noise-brown-noise-pink-noise-guide/)
 
 **Why it works:** Blue light suppresses melatonin production by up to 50%. Even with Night Shift enabled, the cognitive stimulation from social media and news keeps your brain in alert mode.
 

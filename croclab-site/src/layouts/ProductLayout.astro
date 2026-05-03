@@ -16,15 +16,23 @@ const description = lang === 'zh' ? product.descriptionZh : product.description;
 
 const isApp = product.type === 'app';
 const siteUrl = 'https://croclab.dev';
+
+const appCategories: Record<string, string> = {
+  focuscroc: 'EducationalApplication',
+  dreamtone: 'HealthApplication',
+  aidock: 'BrowserApplication',
+  devcodec: 'DeveloperApplication',
+};
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: product.name,
   description: product.description,
-  url: `${siteUrl}/${product.id}`,
+  url: `${siteUrl}/${product.id}/`,
   image: `${siteUrl}${product.icon}`,
-  operatingSystem: isApp ? 'iOS, Android' : 'Chrome',
-  applicationCategory: isApp ? 'LifestyleApplication' : 'BrowserApplication',
+  operatingSystem: isApp ? 'iOS' : 'Chrome',
+  applicationCategory: appCategories[product.id] || (isApp ? 'LifestyleApplication' : 'BrowserApplication'),
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
   author: { '@type': 'Organization', name: 'CrocLab', url: siteUrl },
 };

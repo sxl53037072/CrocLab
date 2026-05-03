@@ -129,6 +129,8 @@ Noisli 模糊了效率工具和睡眠应用的界限。它既适合专注工作�
 
 如果你已经在使用冥想，想要一个全能平台，Calm 或 Headspace 是靠谱（但昂贵的）替代品。如果你是喜欢折腾自定义的发烧友，myNoise 无人能敌。
 
+选好 App 后，不妨看看我们的[5分钟快速入睡指南](/zh/blog/how-to-fall-asleep-fast/)。想了解哪种声音类型最有效？阅读我们的[噪音颜色完全指南](/zh/blog/white-noise-brown-noise-pink-noise-guide/)或了解[为什么雨声对睡眠特别有效](/zh/blog/rain-sounds-for-sleeping/)。
+
 [在 App Store 免费下载 DreamTone →](https://apps.apple.com/us/app/dreamtone-sleep-sounds/id6762450717)
 
 ---

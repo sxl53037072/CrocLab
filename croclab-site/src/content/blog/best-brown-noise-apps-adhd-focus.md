@@ -107,7 +107,7 @@ Searching "brown noise 10 hours" on YouTube gives you instant access — but wit
 **Pros:** Instantly accessible, massive variety.
 **Cons:** Ads interrupt focus (devastating for ADHD), screen stays on (draining battery and emitting blue light), WiFi dependent, no mixing, algorithm recommendations create "just one more video" temptation.
 
-**Our take:** YouTube brown noise is fine for a quick test, but it's a terrible long-term ADHD focus tool. The platform is designed to keep you watching, not keep you working.
+**Our take:** YouTube brown noise is fine for a quick test, but it's a terrible long-term ADHD focus tool. The platform is designed to keep you watching, not keep you working. For a broader selection of sleep-focused apps, see our [best sleep sound apps comparison](/blog/best-sleep-sounds-app-2026/).
 
 ![A calm, organized workspace for focused work](/images/blog/calm-workspace.webp)
 

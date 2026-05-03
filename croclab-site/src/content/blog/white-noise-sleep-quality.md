@@ -49,12 +49,14 @@ Not all ambient sounds are created equal:
 | **Pink noise** | Balanced, natural | Rainfall, wind | Deeper sleep, memory |
 | **Brown noise** | Deep, rumbling | Thunder, waterfall | Deep relaxation, focus |
 
+Want to go deeper? Read our [complete guide to all noise colors](/blog/white-noise-brown-noise-pink-noise-guide/) to understand the science behind each type.
+
 ## How to Use Ambient Sounds for Sleep
 
 1. **Start 15-30 minutes before bed** — Let the sounds become part of your sleep routine
 2. **Keep the volume low** — It should be just loud enough to mask environmental noise
 3. **Use a sleep timer** — Set sounds to stop after 30-60 minutes (after you've fallen asleep)
-4. **Experiment** — Try different sounds to find what works best for you
+4. **Experiment** — Try different sounds to find what works best for you. [Rain sounds](/blog/rain-sounds-for-sleeping/) are a popular choice, or explore [10 science-backed methods to fall asleep faster](/blog/how-to-fall-asleep-fast/)
 
 ## Try DreamTone for Better Sleep
 
