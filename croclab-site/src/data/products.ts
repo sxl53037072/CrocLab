@@ -10,6 +10,7 @@ export interface Product {
   emoji: string;
   color: string;
   gradient: string;
+  comingSoon?: boolean;
   platforms: {
     ios?: string;
     android?: string;
@@ -76,6 +77,28 @@ export const products: Product[] = [
       { icon: '⏰', title: 'Sleep Timer', titleZh: '睡眠计时', description: 'Auto-stop after you fall asleep — never drains your battery', descriptionZh: '入睡后自动停止，不浪费电池' },
       { icon: '📈', title: 'Sleep Tracking', titleZh: '睡眠追踪', description: 'Understand your sleep patterns and improve over time', descriptionZh: '了解你的睡眠模式，逐步改善' },
       { icon: '🎵', title: 'Mix & Match', titleZh: '混搭组合', description: 'Combine multiple sounds to create your perfect sleep environment', descriptionZh: '组合多种声音，打造完美的睡眠环境' },
+    ],
+    screenshots: [],
+  },
+  {
+    id: 'idsnap',
+    name: 'IDSnap',
+    tagline: 'Passport photos in seconds.',
+    taglineZh: '证件照，秒出片。',
+    description: 'Free ID photo maker powered by on-device AI. Take or pick a photo, auto-detect your face, swap the background, and export print-ready passport photos — all without uploading anything.',
+    descriptionZh: '免费证件照制作工具，全程本地 AI 处理。拍照或选照片，自动检测人脸，一键换背景，导出可打印的标准证件照——无需上传任何数据。',
+    type: 'app',
+    icon: '/images/idsnap/icon.webp',
+    emoji: '📸',
+    color: '#E67E22',
+    gradient: 'from-orange-500 to-amber-500',
+    comingSoon: true,
+    platforms: {},
+    features: [
+      { icon: '🤖', title: 'AI Face Detection', titleZh: 'AI 人脸检测', description: 'Automatically detect face position and crop to exact ID photo specifications', descriptionZh: '自动检测人脸位置，精确裁切到标准证件照规格' },
+      { icon: '🎨', title: 'Background Swap', titleZh: '一键换背景', description: 'Remove background instantly and replace with white, blue, red, or custom colors', descriptionZh: '瞬间去除背景，替换为白色、蓝色、红色或自定义颜色' },
+      { icon: '🌍', title: '12+ Country Specs', titleZh: '12+ 国家规格', description: 'Built-in specifications for passports and IDs from 12+ countries including US, UK, EU, China, and more', descriptionZh: '内置 12+ 国家的护照和证件照规格，覆盖美国、英国、欧盟、中国等' },
+      { icon: '🖨️', title: 'Print-Ready Export', titleZh: '打印就绪导出', description: 'Generate 4×6 print layouts with crop lines — ready for home printing or photo shops', descriptionZh: '生成 4×6 打印排版带裁切线——可直接在家打印或送去冲印店' },
     ],
     screenshots: [],
   },

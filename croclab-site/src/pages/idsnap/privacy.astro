@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="IDSnap — Privacy Policy" description="Privacy Policy for IDSnap - Passport Photo Maker by CrocLab." lang="en" noindex={true}>
+  <section class="pt-28 pb-20">
+    <div class="mx-auto max-w-3xl px-6">
+      <a href="/idsnap/" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors mb-8">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
+        Back to IDSnap
+      </a>
+
+      <h1 class="font-display text-4xl font-bold text-[var(--color-text)] mb-2">Privacy Policy</h1>
+      <p class="text-sm text-[var(--color-text-muted)] mb-10">Last updated: May 4, 2026</p>
+
+      <div class="prose max-w-none prose-headings:font-display prose-headings:text-[var(--color-text)] prose-p:text-[var(--color-text-secondary)] prose-p:leading-[1.8] prose-li:text-[var(--color-text-secondary)] prose-strong:text-[var(--color-text)] prose-a:text-[var(--color-accent)]">
+        <p>IDSnap - Passport Photo Maker ("IDSnap", "we", "our", or "the App") is developed by CrocLab. This privacy policy explains how we handle information when you use our App.</p>
+
+        <h2>Information We Do NOT Collect</h2>
+        <p>IDSnap is designed with privacy in mind. We do not collect, store, or transmit any of the following:</p>
+        <ul>
+          <li>Your photos or images</li>
+          <li>Personal identification information</li>
+          <li>Location data (from our code)</li>
+          <li>Account credentials (no login required)</li>
+          <li>Usage analytics (from our code)</li>
+        </ul>
+        <p>All photo processing (face detection, background removal, cropping) is performed entirely on your device using Apple's Vision framework. <strong>Your photos never leave your device through our App.</strong></p>
+
+        <h2>Local Data Storage</h2>
+        <p>IDSnap stores the following data locally on your device only:</p>
+        <ul>
+          <li>Your processed ID photos (in the app's document directory)</li>
+          <li>App preferences and settings</li>
+          <li>Processing history</li>
+        </ul>
+        <p>This data is stored using iOS standard mechanisms (UserDefaults and file storage) and is not accessible to us or any third party. You can delete this data at any time by deleting the App.</p>
+
+        <h2>Third-Party Services</h2>
+        <h3>Google AdMob</h3>
+        <p>We use Google AdMob to display advertisements in the App. Google AdMob may collect certain data for ad personalization and measurement, including:</p>
+        <ul>
+          <li>Device identifiers (IDFA, when permitted)</li>
+          <li>Approximate location (IP-based)</li>
+          <li>App usage data and interactions</li>
+          <li>Device information (model, OS version)</li>
+          <li>Crash and diagnostic data</li>
+        </ul>
+        <p>This data collection is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>. We do not have access to the data Google collects through AdMob.</p>
+
+        <h3>App Tracking Transparency (ATT)</h3>
+        <p>On iOS 14.5 and later, the App will request your permission before allowing Google AdMob to track your activity across other companies' apps and websites. You can choose to allow or deny this request. If you deny, you will still see ads, but they may be less relevant to you.</p>
+        <p>You can change your tracking preference at any time in iOS Settings → Privacy & Security → Tracking.</p>
+
+        <h2>Camera and Photo Library Access</h2>
+        <p>IDSnap requires access to your camera and photo library to function:</p>
+        <ul>
+          <li><strong>Camera</strong>: To take photos for ID photo processing</li>
+          <li><strong>Photo Library (Read)</strong>: To select existing photos for processing</li>
+          <li><strong>Photo Library (Write)</strong>: To save your processed ID photos</li>
+        </ul>
+        <p>We only access photos you explicitly select or take within the App. We do not scan or access any other photos in your library.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>IDSnap does not knowingly collect any personal information from children under 13. The App is rated 4+ and does not contain any content inappropriate for children.</p>
+
+        <h2>Data Security</h2>
+        <p>Since all photo processing and data storage occurs locally on your device, your data benefits from iOS's built-in security features including device encryption and app sandboxing.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated "Last updated" date.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this privacy policy, please contact us at:</p>
+        <p>Website: <a href="https://croclab.dev/">https://croclab.dev/</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
