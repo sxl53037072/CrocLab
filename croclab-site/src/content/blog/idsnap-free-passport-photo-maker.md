@@ -93,16 +93,18 @@ IDSnap doesn't just slap your face on a colored background. It uses advanced per
 
 From photo to export in under 10 seconds. No waiting for uploads, no waiting for server processing, no waiting for downloads. Everything happens instantly on your device.
 
-## When Is IDSnap Available?
+## Download IDSnap — It's Free
 
-IDSnap is currently in the final stages of development and will be available on the **App Store in May 2026**. It will launch as a free app with ad support.
+IDSnap is now available on the App Store as a **free download**. Get it here:
 
-We'll update this page with a direct download link as soon as IDSnap is live. In the meantime, check out our other free tools:
+**[Download IDSnap on the App Store](https://apps.apple.com/us/app/idsnap/id6766225002)**
+
+Also check out our other free tools:
 
 - [FocusCroc](/focuscroc/) — Study streak tracker and Pomodoro timer
 - [DreamTone](/dreamtone/) — Ambient sounds for sleep and focus
 
-Stay tuned — your last overpriced pharmacy passport photo is behind you.
+Your last overpriced pharmacy passport photo is behind you.
 
 ---
 

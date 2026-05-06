@@ -1,6 +1,6 @@
 ---
-title: "Best Brown Noise Apps for ADHD Focus in 2026"
-description: "Discover the best brown noise apps for ADHD focus. Learn why brown noise helps concentration, how to combine it with ambient sounds, and which free apps deliver the best experience."
+title: "7 Best Brown Noise Apps for ADHD Focus in 2026 (Free & Paid)"
+description: "Ranked: the 7 best brown noise apps for ADHD focus in 2026. Why brown noise boosts concentration, free vs paid picks, and tips to combine ambient sounds."
 date: 2026-05-02
 tag: "Sleep"
 readTime: 10

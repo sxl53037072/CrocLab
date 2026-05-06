@@ -1,6 +1,6 @@
 ---
-title: "White Noise vs Brown Noise vs Pink Noise: The Complete Guide to Noise Colors"
-description: "Complete guide to noise colors: white, pink, brown, blue, and gray noise. Learn the science behind each type, when to use them, and which is best for sleep, focus, and anxiety relief."
+title: "White Noise vs Brown Noise vs Pink Noise: Which Helps You Sleep Better? (2026)"
+description: "White, brown, or pink noise — which one actually helps you sleep? Science-backed comparison of all noise colors for sleep, focus, and anxiety relief."
 date: 2026-04-29
 tag: "Sleep"
 readTime: 11

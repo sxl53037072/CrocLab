@@ -92,8 +92,9 @@ export const products: Product[] = [
     emoji: '📸',
     color: '#E67E22',
     gradient: 'from-orange-500 to-amber-500',
-    comingSoon: true,
-    platforms: {},
+    platforms: {
+      ios: 'https://apps.apple.com/us/app/idsnap/id6766225002',
+    },
     features: [
       { icon: '🤖', title: 'AI Face Detection', titleZh: 'AI 人脸检测', description: 'Automatically detect face position and crop to exact ID photo specifications', descriptionZh: '自动检测人脸位置，精确裁切到标准证件照规格' },
       { icon: '🎨', title: 'Background Swap', titleZh: '一键换背景', description: 'Remove background instantly and replace with white, blue, red, or custom colors', descriptionZh: '瞬间去除背景，替换为白色、蓝色、红色或自定义颜色' },
