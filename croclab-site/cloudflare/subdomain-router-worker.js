@@ -57,7 +57,7 @@ async function handleRequest(request) {
 
   // Keep static assets at root paths.
   // Routing strategy for subdomains:
-  // - "/" => app landing page (/focuscroc/ or /dreamtone/)
+  // - "/" => app landing page (e.g. /focuscroc/, /dreamtone/, /idsnap/)
   // - other paths => main site same path (so nav/footer links work normally)
   let proxiedPath;
   if (isStaticAsset) {

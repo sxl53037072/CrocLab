@@ -82,12 +82,33 @@ Push to `main` branch → Cloudflare Pages auto-builds and deploys.
 - `PUBLIC_SUPABASE_URL`
 - `PUBLIC_SUPABASE_ANON_KEY`
 
+## Subdomain Routing
+
+App 类型产品使用 `{app}.croclab.dev` 子域名，通过 Cloudflare Worker 代理到主站对应路径。
+
+**当前子域名：**
+- `focuscroc.croclab.dev` → `croclab.dev/focuscroc/`
+- `dreamtone.croclab.dev` → `croclab.dev/dreamtone/`
+- `idsnap.croclab.dev` → `croclab.dev/idsnap/`
+
+**Worker 代码：** `cloudflare/subdomain-router-worker.js`，部署在 Cloudflare Workers 的 `croc-subdomain-router` 服务上。
+
+### 添加新子域名
+
+1. 在 `cloudflare/subdomain-router-worker.js` 的 `APP_MAP` 中添加新条目
+2. 在 Cloudflare Dashboard → DNS 中添加 CNAME 记录：`{app}` → `croclab.dev`（开启代理/橙色云朵）
+3. 在 Cloudflare Dashboard → Workers 和 Pages → `croc-subdomain-router` → 设置 → 域和路由 中添加路由：`{app}.croclab.dev/*`
+4. 在 Workers 和 Pages → `croc-subdomain-router` 中更新 Worker 代码并部署（快速编辑或 `wrangler deploy`）
+
+> **注意：** Worker 与 Cloudflare Pages 是独立部署的。修改 `subdomain-router-worker.js` 后需要单独部署 Worker，push 到 `main` 只会更新 Pages 静态站点。
+
 ## Adding a New Product
 
 1. Add product data to `src/data/products.ts`
 2. Create product pages in `src/pages/{product-id}/`
 3. Create Chinese locale pages in `src/pages/zh/{product-id}/`
 4. Add product images to `public/images/{product-id}/`
+5. 如果是 App 类型产品且需要子域名，参考上方 [Subdomain Routing](#subdomain-routing) 配置
 
 ## Adding a Blog Post
 
