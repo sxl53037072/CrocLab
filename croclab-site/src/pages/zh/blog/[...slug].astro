@@ -92,7 +92,7 @@ const schema = schemas.length === 1 ? schemas[0] : schemas;
     <div class="mx-auto max-w-3xl px-6">
       {!post.data.heroImage && (
         <div class="pt-28 mb-8">
-          <a href="/zh/blog" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors mb-6">
+          <a href="/zh/blog/" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors mb-6">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
             所有文章
           </a>
@@ -109,13 +109,35 @@ const schema = schemas.length === 1 ? schemas[0] : schemas;
 
       {post.data.heroImage && (
         <div class="pt-8 mb-2">
-          <a href="/zh/blog" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">
+          <a href="/zh/blog/" class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
             所有文章
           </a>
           <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed mt-4 mb-6">{post.data.description}</p>
         </div>
       )}
+
+      <!-- Favorite Button -->
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-2 text-sm text-[var(--color-text-muted)]">
+          <span>{post.data.author || 'CrocLab'}</span>
+        </div>
+        <button
+          id="favorite-btn"
+          data-slug={post.slug}
+          data-title={post.data.title}
+          data-lang="zh"
+          class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] border border-[var(--color-border)] rounded-xl hover:bg-[var(--color-accent-soft)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]/30 transition-all duration-200"
+        >
+          <svg id="fav-icon-outline" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <svg id="fav-icon-filled" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+          </svg>
+          <span id="fav-text">收藏</span>
+        </button>
+      </div>
 
       <div class="section-divider mb-10"></div>
 
@@ -180,4 +202,82 @@ const schema = schemas.length === 1 ? schemas[0] : schemas;
       )}
     </div>
   </article>
+
+  <script>
+    import { createClient } from '@supabase/supabase-js';
+
+    const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+    const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+    const favBtn = document.getElementById('favorite-btn') as HTMLButtonElement;
+    const favIconOutline = document.getElementById('fav-icon-outline');
+    const favIconFilled = document.getElementById('fav-icon-filled');
+    const favText = document.getElementById('fav-text');
+
+    const slug = favBtn?.dataset.slug || '';
+    const title = favBtn?.dataset.title || '';
+    const lang = favBtn?.dataset.lang || 'zh';
+
+    let isFavorited = false;
+
+    function updateUI(favorited: boolean) {
+      isFavorited = favorited;
+      if (favorited) {
+        favIconOutline?.classList.add('hidden');
+        favIconFilled?.classList.remove('hidden');
+        favBtn?.classList.add('text-[var(--color-accent)]', 'border-[var(--color-accent)]/30', 'bg-[var(--color-accent-soft)]');
+        if (favText) favText.textContent = '已收藏';
+      } else {
+        favIconOutline?.classList.remove('hidden');
+        favIconFilled?.classList.add('hidden');
+        favBtn?.classList.remove('text-[var(--color-accent)]', 'border-[var(--color-accent)]/30', 'bg-[var(--color-accent-soft)]');
+        if (favText) favText.textContent = '收藏';
+      }
+    }
+
+    async function init() {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session?.user) return;
+
+      const { data } = await supabase
+        .from('favorites')
+        .select('id')
+        .eq('user_id', session.user.id)
+        .eq('article_slug', slug)
+        .single();
+
+      updateUI(!!data);
+    }
+
+    favBtn?.addEventListener('click', async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session?.user) {
+        await supabase.auth.signInWithOAuth({
+          provider: 'google',
+          options: { redirectTo: `${window.location.origin}/auth/callback/` },
+        });
+        return;
+      }
+
+      favBtn.disabled = true;
+
+      if (isFavorited) {
+        await supabase.from('favorites').delete().eq('user_id', session.user.id).eq('article_slug', slug);
+        updateUI(false);
+      } else {
+        await supabase.from('favorites').insert({
+          user_id: session.user.id,
+          article_slug: slug,
+          article_title: title,
+          article_lang: lang,
+        });
+        updateUI(true);
+      }
+
+      favBtn.disabled = false;
+    });
+
+    init();
+  </script>
 </BaseLayout>

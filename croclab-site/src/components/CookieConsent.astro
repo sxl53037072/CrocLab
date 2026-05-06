@@ -1,0 +1,93 @@
+---
+import type { Lang } from '../i18n/translations';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const text = {
+  en: {
+    message: 'We use cookies to enhance your browsing experience and analyze site traffic.',
+    accept: 'Accept All',
+    necessary: 'Necessary Only',
+    learnMore: 'Learn More',
+  },
+  zh: {
+    message: '我们使用 Cookie 来提升浏览体验并分析网站流量。',
+    accept: '接受全部',
+    necessary: '仅必要',
+    learnMore: '了解更多',
+  },
+};
+
+const t = text[lang];
+---
+
+<div
+  id="cookie-consent"
+  class="fixed bottom-0 left-0 right-0 z-[100] transform translate-y-full transition-transform duration-500 ease-out"
+>
+  <div class="mx-auto max-w-7xl px-4 pb-4">
+    <div class="rounded-2xl bg-white border border-[var(--color-border)] shadow-2xl shadow-black/10 p-5 sm:p-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div class="flex items-start gap-3 flex-1">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center shrink-0 mt-0.5">
+            <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+              {t.message}
+              <a href={lang === 'zh' ? '/zh/privacy/' : '/privacy/'} class="text-[var(--color-accent)] hover:underline ml-1">{t.learnMore}</a>
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 shrink-0 w-full sm:w-auto">
+          <button
+            id="cookie-necessary"
+            class="flex-1 sm:flex-none px-4 py-2 text-sm font-medium text-[var(--color-text-secondary)] border border-[var(--color-border)] rounded-xl hover:bg-[var(--color-bg-tertiary)] transition-colors"
+          >
+            {t.necessary}
+          </button>
+          <button
+            id="cookie-accept"
+            class="flex-1 sm:flex-none px-4 py-2 text-sm font-medium text-white bg-[var(--color-text)] rounded-xl hover:opacity-90 transition-opacity"
+          >
+            {t.accept}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-consent');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const necessaryBtn = document.getElementById('cookie-necessary');
+
+  function hideBanner() {
+    banner?.classList.add('translate-y-full');
+    banner?.classList.remove('translate-y-0');
+  }
+
+  function setCookieConsent(value: string) {
+    localStorage.setItem('cookie-consent', value);
+    localStorage.setItem('cookie-consent-date', new Date().toISOString());
+    hideBanner();
+  }
+
+  const consent = localStorage.getItem('cookie-consent');
+  if (!consent) {
+    setTimeout(() => {
+      banner?.classList.remove('translate-y-full');
+      banner?.classList.add('translate-y-0');
+    }, 1500);
+  }
+
+  acceptBtn?.addEventListener('click', () => setCookieConsent('all'));
+  necessaryBtn?.addEventListener('click', () => setCookieConsent('necessary'));
+</script>

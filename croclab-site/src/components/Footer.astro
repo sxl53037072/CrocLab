@@ -35,7 +35,7 @@ const year = new Date().getFullYear();
           {products.map((product) => (
             <li>
               <a
-                href={getLocalizedPath(`/${product.id}`, lang)}
+                href={getLocalizedPath(`/${product.id}/`, lang)}
                 class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-200 flex items-center gap-2"
               >
                 <img src={product.icon} alt={product.name} class="w-4 h-4 rounded" />
@@ -49,9 +49,10 @@ const year = new Date().getFullYear();
       <div>
         <h3 class="text-sm font-semibold text-[var(--color-text)] mb-4 uppercase tracking-wider">{t('footer.resources')}</h3>
         <ul class="space-y-3">
-          <li><a href={getLocalizedPath('/blog', lang)} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">{t('nav.blog')}</a></li>
-          <li><a href={getLocalizedPath('/about', lang)} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">{t('nav.about')}</a></li>
-          <li><a href={getLocalizedPath('/contact', lang)} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">{t('nav.contact')}</a></li>
+          <li><a href={getLocalizedPath('/blog/', lang)} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">{t('nav.blog')}</a></li>
+          <li><a href={getLocalizedPath('/wishwall/', lang)} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">{lang === 'en' ? 'Wish Wall' : '需求墙'}</a></li>
+          <li><a href={getLocalizedPath('/about/', lang)} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">{t('nav.about')}</a></li>
+          <li><a href={getLocalizedPath('/contact/', lang)} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">{t('nav.contact')}</a></li>
         </ul>
       </div>
 
@@ -60,7 +61,7 @@ const year = new Date().getFullYear();
         <ul class="space-y-3">
           <li>
             <a
-              href={getLocalizedPath('/privacy', lang)}
+              href={getLocalizedPath('/privacy/', lang)}
               class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
             >
               {lang === 'en' ? 'Privacy Policy' : '隐私政策'}
@@ -68,7 +69,7 @@ const year = new Date().getFullYear();
           </li>
           <li>
             <a
-              href={getLocalizedPath('/terms', lang)}
+              href={getLocalizedPath('/terms/', lang)}
               class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
             >
               {lang === 'en' ? 'Terms of Service' : '服务条款'}
