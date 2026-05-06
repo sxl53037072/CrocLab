@@ -4,6 +4,7 @@
  * Routes:
  * - https://focuscroc.croclab.dev/* -> https://croclab.dev/focuscroc/*
  * - https://dreamtone.croclab.dev/* -> https://croclab.dev/dreamtone/*
+ * - https://idsnap.croclab.dev/*    -> https://croclab.dev/idsnap/*
  * - https://{app}.croclab.dev/app-ads.txt -> plain text app-ads response
  */
 
@@ -14,6 +15,10 @@ const APP_MAP = {
   },
   "dreamtone.croclab.dev": {
     pathPrefix: "/dreamtone",
+    appAdsLine: "google.com, pub-1881159980871370, DIRECT, f08c47fec0942fa0",
+  },
+  "idsnap.croclab.dev": {
+    pathPrefix: "/idsnap",
     appAdsLine: "google.com, pub-1881159980871370, DIRECT, f08c47fec0942fa0",
   },
 };
