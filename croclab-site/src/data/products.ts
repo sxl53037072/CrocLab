@@ -46,7 +46,6 @@ export const products: Product[] = [
     gradient: 'from-red-500 to-orange-500',
     platforms: {
       ios: 'https://apps.apple.com/us/app/focuscroc/id6757192119',
-      android: '#',
     },
     features: [
       { icon: '⏱️', title: 'Smart Timer', titleZh: '智能计时', description: 'Customizable Pomodoro intervals that adapt to your workflow', descriptionZh: '可自定义的番茄钟间隔，适应你的工作节奏' },
@@ -70,7 +69,6 @@ export const products: Product[] = [
     gradient: 'from-purple-500 to-indigo-500',
     platforms: {
       ios: 'https://apps.apple.com/us/app/dreamtone-sleep-sounds/id6762450717',
-      android: '#',
     },
     features: [
       { icon: '🌙', title: 'Ambient Sounds', titleZh: '环境音效', description: 'Rain, ocean, forest, and 30+ carefully crafted soundscapes', descriptionZh: '雨声、海浪、森林等 30+ 精心打造的声景' },
