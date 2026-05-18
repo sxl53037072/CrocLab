@@ -17,8 +17,8 @@ const description = lang === 'zh' ? product.descriptionZh : product.description;
 
 <a
   href={getLocalizedPath(`/${product.id}`, lang)}
-  class="group card-hover p-6 lg:p-8 flex flex-col animate-on-scroll"
-  style={`animation-delay: ${index * 100}ms`}
+  class="group card-hover card-glow tilt-card p-6 lg:p-8 flex flex-col animate-on-scroll"
+  style={`--stagger: ${index}; animation-delay: ${index * 100}ms`}
 >
   <div class="flex items-start justify-between mb-5">
     <img src={product.icon} alt={product.name} class="w-14 h-14 rounded-2xl shadow-sm" width="56" height="56" loading="lazy" />

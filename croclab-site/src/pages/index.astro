@@ -53,13 +53,18 @@ const schema = {
       <img
         src="/images/blog/office-hero.webp"
         alt="Modern workspace representing CrocLab's creative tech studio"
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover parallax-hero"
         loading="eager"
         fetchpriority="high"
       />
       <div class="absolute inset-0 hero-overlay-h"></div>
       <div class="absolute inset-0 hero-overlay-v"></div>
     </div>
+
+    <!-- Floating decorative blobs -->
+    <div class="blob w-72 h-72 bg-[var(--color-accent)] top-20 right-[15%] float-slow"></div>
+    <div class="blob w-56 h-56 bg-purple-500 bottom-32 left-[10%] float-medium" style="animation-delay: -3s"></div>
+    <div class="blob w-40 h-40 bg-blue-500 top-[40%] right-[40%] float-slow" style="animation-delay: -5s"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
       <div class="max-w-2xl">
@@ -70,8 +75,8 @@ const schema = {
         </div>
 
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6 text-[var(--color-text)] animate-slide-up">
-          Crafting tools that make your digital life
-          <span class="gradient-text"> simpler.</span>
+          <span id="hero-typed"></span><span class="typing-cursor" id="hero-cursor"></span>
+          <span class="gradient-text gradient-text-animated"> simpler.</span>
         </h1>
 
         <p class="max-w-xl text-lg text-[var(--color-text-secondary)] leading-relaxed mb-10 animate-slide-up" style="animation-delay: 100ms">
@@ -79,15 +84,15 @@ const schema = {
         </p>
 
         <div class="flex flex-col sm:flex-row items-start gap-4 animate-slide-up" style="animation-delay: 200ms">
-          <a href="#products" class="btn-primary">
+          <a href="#products" class="btn-primary group">
             {t('hero.cta')}
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 transition-transform group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </a>
-          <a href="/about/" class="btn-secondary">
+          <a href="/about/" class="btn-secondary group">
             {t('nav.about')}
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
@@ -96,12 +101,12 @@ const schema = {
         <!-- Product Icons Row -->
         <div class="mt-14 flex items-center gap-6 animate-fade-in" style="animation-delay: 400ms">
           <div class="flex -space-x-2">
-            {products.map((p) => (
-              <img src={p.icon} alt={p.name} class="w-10 h-10 rounded-xl border-2 border-[var(--color-bg)] shadow-sm" />
+            {products.map((p, i) => (
+              <img src={p.icon} alt={p.name} class="w-10 h-10 rounded-xl border-2 border-[var(--color-bg)] shadow-sm transition-transform hover:scale-110 hover:-translate-y-1" style={`transition-delay: ${i * 50}ms`} />
             ))}
           </div>
           <div>
-            <div class="text-sm font-semibold text-[var(--color-text)]">{products.length} Products</div>
+            <div class="text-sm font-semibold text-[var(--color-text)]"><span class="count-up" data-target={products.length}>0</span> Products</div>
             <div class="text-xs text-[var(--color-text-muted)]">Apps & Chrome Extensions</div>
           </div>
         </div>
@@ -144,7 +149,7 @@ const schema = {
   <section class="relative py-24 overflow-hidden">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="animate-on-scroll">
+        <div class="reveal-left">
           <p class="text-sm font-semibold uppercase tracking-widest text-[var(--color-accent)] mb-3">Why CrocLab</p>
           <h2 class="font-display text-3xl sm:text-4xl font-bold text-[var(--color-text)] mb-6">
             Built with care,<br/>designed for everyone.
@@ -182,16 +187,16 @@ const schema = {
             </div>
           </div>
         </div>
-        <div class="animate-on-scroll relative" style="animation-delay: 200ms">
+        <div class="reveal-right relative">
           <img
             src="/images/blog/developer-workspace.webp"
             alt="Developer workspace with code on screen"
-            class="rounded-3xl shadow-2xl w-full"
+            class="rounded-3xl shadow-2xl w-full hover:scale-[1.02] transition-transform duration-500"
             loading="lazy"
             width="600"
             height="400"
           />
-          <div class="absolute -bottom-6 -left-6 card-elevated p-4 flex items-center gap-3 animate-on-scroll" style="animation-delay: 400ms">
+          <div class="absolute -bottom-6 -left-6 card-elevated p-4 flex items-center gap-3 animate-on-scroll" style="--stagger: 2">
             <div class="flex -space-x-1.5">
               {products.slice(0, 3).map((p) => (
                 <img src={p.icon} alt="" class="w-8 h-8 rounded-lg border-2 border-[var(--color-bg)]" />
@@ -227,8 +232,8 @@ const schema = {
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {blogPosts.map((post) => (
-          <BlogCard {...post} lang={lang} />
+        {blogPosts.map((post, i) => (
+          <BlogCard {...post} lang={lang} index={i} />
         ))}
       </div>
     </div>

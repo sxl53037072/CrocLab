@@ -10,9 +10,10 @@ interface Props {
   readTime: number;
   tag: string;
   lang: Lang;
+  index?: number;
 }
 
-const { title, description, slug, date, readTime, tag, lang } = Astro.props;
+const { title, description, slug, date, readTime, tag, lang, index = 0 } = Astro.props;
 const t = useTranslation(lang);
 const formattedDate = new Date(date).toLocaleDateString(lang === 'zh' ? 'zh-CN' : 'en-US', {
   year: 'numeric',
@@ -23,7 +24,8 @@ const formattedDate = new Date(date).toLocaleDateString(lang === 'zh' ? 'zh-CN' 
 
 <a
   href={getLocalizedPath(`/blog/${slug}/`, lang)}
-  class="group card-hover p-6 flex flex-col"
+  class="group card-hover card-glow tilt-card p-6 flex flex-col animate-on-scroll"
+  style={`--stagger: ${index}`}
 >
   <div class="flex items-center gap-3 mb-4">
     <span class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)]">

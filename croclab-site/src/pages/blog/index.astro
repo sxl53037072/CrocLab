@@ -38,7 +38,7 @@ const schema = {
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post) => (
+        {posts.map((post, i) => (
           <BlogCard
             title={post.data.title}
             description={post.data.description}
@@ -47,6 +47,7 @@ const schema = {
             readTime={post.data.readTime}
             tag={post.data.tag}
             lang="en"
+            index={i}
           />
         ))}
       </div>

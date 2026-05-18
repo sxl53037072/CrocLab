@@ -41,7 +41,7 @@ function getSwitchPath(): string {
 const switchPath = getSwitchPath();
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl border-b border-[var(--color-border)]" id="main-nav" style="background-color: var(--color-overlay)">
+<nav class="fixed top-0 left-0 right-0 z-50 border-b border-[var(--color-border)]" id="main-nav" style="background-color: var(--color-overlay); backdrop-filter: blur(12px); transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), backdrop-filter 0.3s ease, box-shadow 0.3s ease">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <a href={getLocalizedPath('/', lang)} class="flex items-center gap-2.5 group">
@@ -117,10 +117,32 @@ const switchPath = getSwitchPath();
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIcon = document.querySelector('.menu-icon');
   const closeIcon = document.querySelector('.close-icon');
+  const mainNav = document.getElementById('main-nav');
 
   menuBtn?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
     menuIcon?.classList.toggle('hidden');
     closeIcon?.classList.toggle('hidden');
   });
+
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (!mainNav) return;
+
+    if (y > 60) {
+      mainNav.style.backdropFilter = 'blur(20px) saturate(1.8)';
+      mainNav.style.boxShadow = '0 1px 20px rgba(0,0,0,0.08)';
+    } else {
+      mainNav.style.backdropFilter = 'blur(12px)';
+      mainNav.style.boxShadow = 'none';
+    }
+
+    if (y > lastScroll && y > 200) {
+      mainNav.style.transform = 'translateY(-100%)';
+    } else {
+      mainNav.style.transform = 'translateY(0)';
+    }
+    lastScroll = y;
+  }, { passive: true });
 </script>
