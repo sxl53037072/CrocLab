@@ -41,7 +41,7 @@ function getSwitchPath(): string {
 const switchPath = getSwitchPath();
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[var(--color-bg)]/80 backdrop-blur-xl border-b border-[var(--color-border)]" id="main-nav">
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl border-b border-[var(--color-border)]" id="main-nav" style="background-color: var(--color-overlay)">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <a href={getLocalizedPath('/', lang)} class="flex items-center gap-2.5 group">
