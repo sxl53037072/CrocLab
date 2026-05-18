@@ -61,7 +61,7 @@ const wishwallPath = lang === 'zh' ? '/zh/wishwall/' : '/wishwall/';
     <!-- Dropdown -->
     <div
       id="user-dropdown"
-      class="hidden absolute right-0 top-full mt-2 w-48 bg-white border border-[var(--color-border)] rounded-xl shadow-lg shadow-black/10 overflow-hidden z-50"
+      class="hidden absolute right-0 top-full mt-2 w-48 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl shadow-lg shadow-black/10 overflow-hidden z-50"
     >
       <div id="user-info" class="px-4 py-3 border-b border-[var(--color-border)]">
         <p id="user-name" class="text-sm font-semibold text-[var(--color-text)] truncate"></p>
@@ -76,7 +76,7 @@ const wishwallPath = lang === 'zh' ? '/zh/wishwall/' : '/wishwall/';
         </a>
         <button
           id="sign-out-btn"
-          class="w-full text-left px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 transition-colors"
+          class="w-full text-left px-4 py-2.5 text-sm text-red-500 hover:bg-[rgba(239,68,68,0.1)] transition-colors"
         >
           {t.signOut}
         </button>

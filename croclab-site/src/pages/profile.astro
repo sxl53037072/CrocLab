@@ -61,7 +61,7 @@ const lang: Lang = 'en';
             <div class="inline-block w-6 h-6 border-2 border-[var(--color-border)] border-t-[var(--color-text)] rounded-full animate-spin"></div>
           </div>
           <div id="fav-empty" class="hidden text-center py-12">
-            <div class="w-14 h-14 rounded-2xl bg-rose-50 flex items-center justify-center mx-auto mb-4">
+            <div class="w-14 h-14 rounded-2xl bg-[rgba(244,63,94,0.1)] flex items-center justify-center mx-auto mb-4">
               <svg class="w-7 h-7 text-rose-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
@@ -77,7 +77,7 @@ const lang: Lang = 'en';
             <div class="inline-block w-6 h-6 border-2 border-[var(--color-border)] border-t-[var(--color-text)] rounded-full animate-spin"></div>
           </div>
           <div id="hist-empty" class="hidden text-center py-12">
-            <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mx-auto mb-4">
+            <div class="w-14 h-14 rounded-2xl bg-[rgba(59,130,246,0.1)] flex items-center justify-center mx-auto mb-4">
               <svg class="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -197,7 +197,7 @@ const lang: Lang = 'en';
     data.forEach((visit: any) => {
       const el = document.createElement('a');
       el.href = visit.page_path;
-      el.className = 'flex items-center justify-between p-4 rounded-xl border border-[var(--color-border)] hover:border-blue-200 hover:bg-blue-50/50 transition-all group';
+      el.className = 'flex items-center justify-between p-4 rounded-xl border border-[var(--color-border)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-bg-secondary)] transition-all group';
       el.innerHTML = `
         <div class="flex items-center gap-3 min-w-0">
           <svg class="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

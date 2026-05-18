@@ -35,6 +35,16 @@ const zhPath = lang === 'en' ? `/zh${pathname === '/' ? '' : pathname}` : pathna
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
     <link rel="icon" type="image/png" sizes="180x180" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -52,7 +62,7 @@ const zhPath = lang === 'en' ? `/zh${pathname === '/' ? '' : pathname}` : pathna
       noindex={noindex}
     />
   </head>
-  <body class="min-h-screen flex flex-col bg-white">
+  <body class="min-h-screen flex flex-col bg-[var(--color-bg)]">
     <Nav lang={lang} currentPath={Astro.url.pathname} />
     <main class="flex-1">
       <slot />

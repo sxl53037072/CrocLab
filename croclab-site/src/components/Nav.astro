@@ -2,6 +2,7 @@
 import type { Lang } from '../i18n/translations';
 import { useTranslation, getLocalizedPath, languages } from '../i18n/translations';
 import AuthButton from './AuthButton.astro';
+import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
   lang: Lang;
@@ -40,7 +41,7 @@ function getSwitchPath(): string {
 const switchPath = getSwitchPath();
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-xl border-b border-[var(--color-border)]" id="main-nav">
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[var(--color-bg)]/80 backdrop-blur-xl border-b border-[var(--color-border)]" id="main-nav">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <a href={getLocalizedPath('/', lang)} class="flex items-center gap-2.5 group">
@@ -66,6 +67,7 @@ const switchPath = getSwitchPath();
         >
           {otherLangLabel}
         </a>
+        <ThemeToggle />
         <div class="w-px h-5 bg-[var(--color-border)] mx-1"></div>
         <AuthButton lang={lang} />
       </div>
@@ -101,7 +103,10 @@ const switchPath = getSwitchPath();
         >
           {otherLangLabel}
         </a>
-        <AuthButton lang={lang} />
+        <div class="flex items-center gap-2">
+          <ThemeToggle />
+          <AuthButton lang={lang} />
+        </div>
       </div>
     </div>
   </div>
