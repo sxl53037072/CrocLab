@@ -135,18 +135,63 @@ const zhPath = lang === 'en' ? `/zh${pathname === '/' ? '' : pathname}` : pathna
         });
       });
 
-      /* --- 3D tilt effect --- */
+      /* --- 3D tilt effect on BlogCards (stronger) --- */
       document.querySelectorAll<HTMLElement>('.tilt-card').forEach((card) => {
         card.addEventListener('mousemove', (e) => {
           const rect = card.getBoundingClientRect();
           const x = (e.clientX - rect.left) / rect.width - 0.5;
           const y = (e.clientY - rect.top) / rect.height - 0.5;
-          card.style.transform = `perspective(800px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-4px)`;
+          card.style.transform = `perspective(600px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateY(-6px) scale(1.02)`;
         });
         card.addEventListener('mouseleave', () => {
           card.style.transform = '';
         });
       });
+
+      /* --- Hero Carousel --- */
+      const carousel = document.getElementById('hero-carousel');
+      if (carousel) {
+        const slides = carousel.querySelectorAll<HTMLElement>('.hero-slide');
+        const dots = carousel.querySelectorAll<HTMLElement>('.carousel-dot');
+        let current = 0;
+        let timer: ReturnType<typeof setInterval>;
+
+        function showSlide(idx: number) {
+          slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+          dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+          current = idx;
+        }
+
+        function nextSlide() {
+          showSlide((current + 1) % slides.length);
+        }
+
+        timer = setInterval(nextSlide, 5000);
+
+        dots.forEach((dot) => {
+          dot.addEventListener('click', () => {
+            clearInterval(timer);
+            showSlide(parseInt(dot.dataset.index || '0', 10));
+            timer = setInterval(nextSlide, 5000);
+          });
+        });
+      }
+
+      /* --- Prose content animations (blog articles) --- */
+      const proseEl = document.querySelector('.prose');
+      if (proseEl) {
+        const proseObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('prose-visible');
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+        proseEl.querySelectorAll('h2, h3, p, ul, ol, blockquote, img').forEach((el) => {
+          proseObserver.observe(el);
+        });
+      }
     </script>
 
     <!-- Theme toggle -->

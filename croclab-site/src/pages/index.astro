@@ -48,23 +48,40 @@ const schema = {
 >
   <!-- Hero Section -->
   <section class="relative min-h-[90vh] flex items-center overflow-hidden pt-16">
-    <!-- Hero Background Image -->
-    <div class="absolute inset-0">
-      <img
-        src="/images/blog/office-hero.webp"
-        alt="Modern workspace representing CrocLab's creative tech studio"
-        class="w-full h-full object-cover parallax-hero"
-        loading="eager"
-        fetchpriority="high"
-      />
-      <div class="absolute inset-0 hero-overlay-h"></div>
-      <div class="absolute inset-0 hero-overlay-v"></div>
+    <!-- Hero Carousel -->
+    <div class="hero-carousel" id="hero-carousel">
+      <div class="hero-slide active">
+        <img src="/images/blog/office-hero.webp" alt="Modern workspace" loading="eager" fetchpriority="high" />
+      </div>
+      <div class="hero-slide">
+        <img src="/images/blog/hero-night-sky.webp" alt="Night sky — peaceful sleep with DreamTone" loading="lazy" />
+      </div>
+      <div class="hero-slide">
+        <img src="/images/blog/hero-focus-desk.webp" alt="Focused workspace — stay productive with FocusCroc" loading="lazy" />
+      </div>
+      <div class="hero-slide">
+        <img src="/images/blog/hero-phone-camera.webp" alt="Phone photography — instant ID photos with IDSnap" loading="lazy" />
+      </div>
+      <div class="hero-slide">
+        <img src="/images/blog/hero-tech-workspace.webp" alt="Tech setup — developer tools by CrocLab" loading="lazy" />
+      </div>
+      <div class="absolute inset-0 hero-overlay-h" style="z-index: 2"></div>
+      <div class="absolute inset-0 hero-overlay-v" style="z-index: 2"></div>
+
+      <!-- Carousel dots -->
+      <div class="carousel-dots" id="carousel-dots">
+        <button class="carousel-dot active" data-index="0"></button>
+        <button class="carousel-dot" data-index="1"></button>
+        <button class="carousel-dot" data-index="2"></button>
+        <button class="carousel-dot" data-index="3"></button>
+        <button class="carousel-dot" data-index="4"></button>
+      </div>
     </div>
 
     <!-- Floating decorative blobs -->
-    <div class="blob w-72 h-72 bg-[var(--color-accent)] top-20 right-[15%] float-slow"></div>
-    <div class="blob w-56 h-56 bg-purple-500 bottom-32 left-[10%] float-medium" style="animation-delay: -3s"></div>
-    <div class="blob w-40 h-40 bg-blue-500 top-[40%] right-[40%] float-slow" style="animation-delay: -5s"></div>
+    <div class="blob w-96 h-96 bg-[var(--color-accent)] top-10 right-[10%] float-slow"></div>
+    <div class="blob w-72 h-72 bg-purple-500 bottom-20 left-[5%] float-medium" style="animation-delay: -3s"></div>
+    <div class="blob w-56 h-56 bg-blue-500 top-[35%] right-[35%] float-slow" style="animation-delay: -5s"></div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
       <div class="max-w-2xl">
@@ -76,7 +93,7 @@ const schema = {
 
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6 text-[var(--color-text)] animate-slide-up">
           <span id="hero-typed"></span><span class="typing-cursor" id="hero-cursor"></span>
-          <span class="gradient-text gradient-text-animated"> simpler.</span>
+          <span class="gradient-text"> simpler.</span>
         </h1>
 
         <p class="max-w-xl text-lg text-[var(--color-text-secondary)] leading-relaxed mb-10 animate-slide-up" style="animation-delay: 100ms">
