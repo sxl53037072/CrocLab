@@ -13,138 +13,64 @@ const { product, lang, index } = Astro.props;
 const t = useTranslation(lang);
 const tagline = lang === 'zh' ? product.taglineZh : product.tagline;
 const description = lang === 'zh' ? product.descriptionZh : product.description;
-const features = product.features.slice(0, 3);
 ---
 
-<div
-  class="product-flip-card animate-on-scroll"
+<a
+  href={getLocalizedPath(`/${product.id}`, lang)}
+  class="group card-glow tilt-card p-6 lg:p-8 flex flex-col animate-on-scroll product-card"
   style={`--stagger: ${index}; --product-color: ${product.color}`}
 >
-  <div class="product-flip-inner">
-    <!-- FRONT -->
-    <a
-      href={getLocalizedPath(`/${product.id}`, lang)}
-      class="product-flip-front card-glow"
-    >
-      <div class="flex items-start justify-between mb-5">
-        <img src={product.icon} alt={product.name} class="w-14 h-14 rounded-2xl shadow-sm" width="56" height="56" loading="lazy" />
-        <div class="flex gap-1.5">
-          {product.comingSoon && (
-            <span class="px-2.5 py-1 text-[10px] font-semibold rounded-md text-white" style={`background: ${product.color}`}>
-              {lang === 'zh' ? '即将上线' : 'Coming Soon'}
-            </span>
-          )}
-          {product.platforms.ios && (
-            <span class="px-2 py-1 text-[10px] font-medium rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-muted)]">iOS</span>
-          )}
-          {product.platforms.android && (
-            <span class="px-2 py-1 text-[10px] font-medium rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-muted)]">Android</span>
-          )}
-          {product.platforms.chrome && (
-            <span class="px-2 py-1 text-[10px] font-medium rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-muted)]">Chrome</span>
-          )}
-        </div>
-      </div>
-
-      <h3 class="font-display text-xl font-bold text-[var(--color-text)] mb-1">
-        {product.name}
-      </h3>
-      <p class="text-sm font-medium mb-3" style={`color: ${product.color}`}>{tagline}</p>
-      <p class="text-sm text-[var(--color-text-muted)] leading-relaxed flex-1">{description}</p>
-
-      <div class="mt-6 flex items-center text-sm font-semibold" style={`color: ${product.color}`}>
-        {lang === 'zh' ? '悬停查看详情' : 'Hover for details'}
-        <svg class="w-4 h-4 ml-1 animate-bounce-x" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </div>
-    </a>
-
-    <!-- BACK -->
-    <a
-      href={getLocalizedPath(`/${product.id}`, lang)}
-      class="product-flip-back"
-      style={`background: linear-gradient(135deg, ${product.color}, ${product.color}dd)`}
-    >
-      <img src={product.icon} alt={product.name} class="w-12 h-12 rounded-xl shadow-lg mb-4 border-2 border-white/20" width="48" height="48" />
-      <h3 class="font-display text-xl font-bold text-white mb-4">{product.name}</h3>
-
-      <div class="space-y-3 mb-6 w-full">
-        {features.map((f) => (
-          <div class="flex items-start gap-3">
-            <span class="text-lg shrink-0">{f.icon}</span>
-            <div>
-              <p class="text-sm font-semibold text-white">{lang === 'zh' ? f.titleZh : f.title}</p>
-              <p class="text-xs text-white/70 leading-relaxed">{lang === 'zh' ? f.descriptionZh : f.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="mt-auto flex items-center gap-2 text-sm font-bold text-white bg-white/20 px-5 py-2.5 rounded-xl backdrop-blur-sm hover:bg-white/30 transition-colors">
-        {t('products.learnMore')}
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </div>
-    </a>
+  <div class="flex items-start justify-between mb-5">
+    <img src={product.icon} alt={product.name} class="w-14 h-14 rounded-2xl shadow-sm transition-transform duration-300 group-hover:scale-110" width="56" height="56" loading="lazy" />
+    <div class="flex gap-1.5">
+      {product.comingSoon && (
+        <span class="px-2.5 py-1 text-[10px] font-semibold rounded-md text-white" style={`background: ${product.color}`}>
+          {lang === 'zh' ? '即将上线' : 'Coming Soon'}
+        </span>
+      )}
+      {product.platforms.ios && (
+        <span class="px-2 py-1 text-[10px] font-medium rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-muted)]">iOS</span>
+      )}
+      {product.platforms.android && (
+        <span class="px-2 py-1 text-[10px] font-medium rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-muted)]">Android</span>
+      )}
+      {product.platforms.chrome && (
+        <span class="px-2 py-1 text-[10px] font-medium rounded-md bg-[var(--color-bg-tertiary)] text-[var(--color-text-muted)]">Chrome</span>
+      )}
+    </div>
   </div>
-</div>
+
+  <h3 class="font-display text-xl font-bold text-[var(--color-text)] mb-1 group-hover:text-[var(--color-accent)] transition-colors">
+    {product.name}
+  </h3>
+  <p class="text-sm font-medium mb-3" style={`color: ${product.color}`}>{tagline}</p>
+  <p class="text-sm text-[var(--color-text-muted)] leading-relaxed flex-1">{description}</p>
+
+  <div class="mt-6 flex items-center text-sm font-semibold text-[var(--color-text-secondary)] group-hover:text-[var(--color-accent)] transition-colors">
+    {t('products.learnMore')}
+    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    </svg>
+  </div>
+
+  <!-- Product color accent line at bottom -->
+  <div class="absolute bottom-0 left-0 right-0 h-1 rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={`background: ${product.color}`}></div>
+</a>
 
 <style>
-  .product-flip-card {
-    perspective: 1200px;
-    min-height: 280px;
-  }
-  .product-flip-inner {
+  .product-card {
     position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 280px;
-    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transform-style: preserve-3d;
-  }
-  .product-flip-card:hover .product-flip-inner {
-    transform: rotateY(180deg);
-  }
-  .product-flip-front,
-  .product-flip-back {
-    position: absolute;
-    inset: 0;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    border-radius: 1rem;
-    padding: 1.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .product-flip-front {
     background: var(--color-bg);
     border: 1px solid var(--color-border);
-    z-index: 2;
-  }
-  .product-flip-back {
-    transform: rotateY(180deg);
-    z-index: 1;
-    align-items: center;
-    text-align: center;
+    border-radius: 1rem;
     overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .product-flip-back::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  @keyframes bounce-x {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(4px); }
-  }
-  .animate-bounce-x {
-    animation: bounce-x 1.5s ease-in-out infinite;
+  .product-card:hover {
+    border-color: var(--color-border-light);
+    box-shadow:
+      0 20px 60px -15px var(--color-card-shadow),
+      0 4px 20px -5px var(--color-card-shadow),
+      0 0 0 1px var(--product-color, var(--color-accent))20;
   }
 </style>
