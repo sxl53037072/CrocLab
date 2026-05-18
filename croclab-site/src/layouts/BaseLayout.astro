@@ -86,6 +86,49 @@ const zhPath = lang === 'en' ? `/zh${pathname === '/' ? '' : pathname}` : pathna
       });
     </script>
 
+    <!-- Theme toggle -->
+    <script is:inline>
+      (function() {
+        function getTheme() {
+          return localStorage.getItem('theme') || 'dark';
+        }
+
+        function applyTheme(theme) {
+          var root = document.documentElement;
+          var suns = document.querySelectorAll('.theme-icon-sun');
+          var moons = document.querySelectorAll('.theme-icon-moon');
+
+          if (theme === 'dark') {
+            root.setAttribute('data-theme', 'dark');
+            root.classList.add('dark');
+            suns.forEach(function(el) { el.classList.remove('hidden'); });
+            moons.forEach(function(el) { el.classList.add('hidden'); });
+          } else {
+            root.removeAttribute('data-theme');
+            root.classList.remove('dark');
+            suns.forEach(function(el) { el.classList.add('hidden'); });
+            moons.forEach(function(el) { el.classList.remove('hidden'); });
+          }
+        }
+
+        applyTheme(getTheme());
+
+        document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var next = getTheme() === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', next);
+            applyTheme(next);
+          });
+        });
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+          if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+          }
+        });
+      })();
+    </script>
+
     <!-- Visit history tracking -->
     <script>
       import { createClient } from '@supabase/supabase-js';
