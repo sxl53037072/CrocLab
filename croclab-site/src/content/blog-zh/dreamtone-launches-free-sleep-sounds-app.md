@@ -1,14 +1,14 @@
 ---
-title: "DreamTone 明天上线：一款免费、无订阅、尊重隐私的睡眠白噪音 App"
-description: "DreamTone 即将上架 App Store — 30+ 高品质声景、智能混音、睡眠定时器，完全免费，零数据收集。"
-date: 2026-05-20
+title: "DreamTone 正式上线：一款免费、无订阅、尊重隐私的睡眠白噪音 App"
+description: "DreamTone 已上架 App Store 并登陆 Product Hunt — 30+ 高品质声景、智能混音、睡眠定时器，完全免费，零数据收集。"
+date: 2026-05-21
 tag: "睡眠"
 readTime: 6
 heroImage: "/images/blog/dreamtone-tomorrow-hero.webp"
 relatedProduct: "dreamtone"
 ---
 
-明天，我们筹备了数月的产品终于要上线了。[DreamTone](/zh/dreamtone) 将正式登陆 App Store — 我们想和你聊聊为什么做这款 app、它有什么不同，以及为什么它完全免费。
+[DreamTone](/zh/dreamtone) 正式上线了。经过数月的开发和测试，这款免费睡眠白噪音 app 现已登陆 [App Store](https://apps.apple.com/us/app/dreamtone-sleep-sounds/id6762450717)，并在 [Product Hunt](https://www.producthunt.com/products/dreamtone?launch=dreamtone) 发布。下面聊聊我们为什么做它、它有什么不同，以及为什么完全免费。
 
 ## 2026 年，睡眠 App 怎么了？
 
@@ -78,17 +78,20 @@ DreamTone 会记录你的使用情况 — 用了哪些声音、听了多久、�
 | 离线模式 | ✅ | ❌ 付费 | ❌ 付费 |
 | 数据收集 | 无 | 大量 | 大量 |
 
-## 明天如何获取 DreamTone
+## 立即获取 DreamTone
 
-DreamTone 将于 **2026 年 5 月 21 日** 上架 App Store。支持 iPhone 和 iPad，需要 iOS 16+，安装包不到 50 MB。
+DreamTone 现已可用，支持 iPhone 和 iPad（iOS 16+），安装包不到 50 MB。
 
-[免费下载 DreamTone →](https://apps.apple.com/us/app/dreamtone-sleep-sounds/id6762450717)
+**下载并支持发布：**
+
+- [在 App Store 免费下载 DreamTone →](https://apps.apple.com/us/app/dreamtone-sleep-sounds/id6762450717)
+- [在 Product Hunt 查看 DreamTone →](https://www.producthunt.com/products/dreamtone?launch=dreamtone) — 点个赞能让更多人发现这款不为雨声收 ¥488/年的睡眠 app
 
 作为早期用户，我们希望你能：
 
 1. **今晚就试试** — 选一个喜欢的声景，设 30 分钟定时器
 2. **混出你的组合** — 尝试叠加 2-3 种声音
-3. **留个评价** — 真诚的反馈帮助我们改进，也帮更多人发现 DreamTone
+3. **在 App Store 或 Product Hunt 留个评价** — 真诚的反馈帮助我们改进，也帮更多人发现 DreamTone
 
 ## 接下来的计划
 

@@ -1,14 +1,14 @@
 ---
-title: "DreamTone Launches Tomorrow: A Free Sleep Sounds App That Respects Your Wallet and Your Privacy"
-description: "DreamTone is launching on the App Store — a free, no-subscription sleep sounds app with 30+ soundscapes, smart timer, and zero data collection."
-date: 2026-05-20
+title: "DreamTone Is Live: A Free Sleep Sounds App That Respects Your Wallet and Your Privacy"
+description: "DreamTone is now on the App Store and Product Hunt — a free, no-subscription sleep sounds app with 30+ soundscapes, smart timer, and zero data collection."
+date: 2026-05-21
 tag: "Sleep"
 readTime: 6
 heroImage: "/images/blog/dreamtone-tomorrow-hero.webp"
 relatedProduct: "dreamtone"
 ---
 
-Tomorrow, something we've been building for months finally goes live. [DreamTone](/dreamtone) launches on the App Store — and we want to tell you why we built it, what makes it different, and why it's completely free.
+[DreamTone](/dreamtone) is live. After months of building and testing, our free sleep sounds app is on the [App Store](https://apps.apple.com/us/app/dreamtone-sleep-sounds/id6762450717) and featured on [Product Hunt](https://www.producthunt.com/products/dreamtone?launch=dreamtone). Here's why we built it, what makes it different, and why it's completely free.
 
 ## The Problem with Sleep Apps in 2026
 
@@ -78,17 +78,20 @@ We get asked this a lot. Here's our honest answer:
 | Offline mode | ✅ | ❌ Premium | ❌ Premium |
 | Data collection | None | Extensive | Extensive |
 
-## How to Get DreamTone Tomorrow
+## Get DreamTone Today
 
-DreamTone launches on the App Store on **May 21, 2026**. It's available for iPhone and iPad, requires iOS 16+, and weighs under 50 MB.
+DreamTone is available now for iPhone and iPad (iOS 16+), under 50 MB.
 
-[Download DreamTone free →](https://apps.apple.com/us/app/dreamtone-sleep-sounds/id6762450717)
+**Download & support the launch:**
+
+- [Download DreamTone free on the App Store →](https://apps.apple.com/us/app/dreamtone-sleep-sounds/id6762450717)
+- [Check out DreamTone on Product Hunt →](https://www.producthunt.com/products/dreamtone?launch=dreamtone) — an upvote helps more people discover a sleep app that doesn't charge $70/year for rain sounds
 
 Here's what we'd love from early adopters:
 
 1. **Try it tonight** — pick your favorite soundscape and set a 30-minute timer
 2. **Mix your own combo** — experiment with layering 2-3 sounds
-3. **Leave a review** — honest feedback helps us improve and helps others discover DreamTone
+3. **Leave a review** on the App Store or a comment on Product Hunt — honest feedback helps us improve and helps others find DreamTone
 
 ## What's Coming Next
 
