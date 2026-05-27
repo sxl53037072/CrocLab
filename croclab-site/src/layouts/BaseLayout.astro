@@ -27,7 +27,9 @@ const {
 const pathname = Astro.url.pathname;
 const siteUrl = 'https://croclab.dev';
 const enPath = lang === 'zh' ? pathname.replace(/^\/zh/, '') || '/' : pathname;
-const zhPath = lang === 'en' ? `/zh${pathname === '/' ? '' : pathname}` : pathname;
+const zhPath = lang === 'en'
+  ? (pathname === '/' ? '/zh/' : `/zh${pathname.endsWith('/') ? pathname : `${pathname}/`}`)
+  : pathname;
 ---
 
 <!DOCTYPE html>

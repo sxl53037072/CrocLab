@@ -7,9 +7,11 @@ interface Props {
   product: Product;
   lang: Lang;
   index: number;
+  /** 首页产品区 pin 滚动逐张Reveal */
+  pinReveal?: boolean;
 }
 
-const { product, lang, index } = Astro.props;
+const { product, lang, index, pinReveal = false } = Astro.props;
 const t = useTranslation(lang);
 const tagline = lang === 'zh' ? product.taglineZh : product.tagline;
 const description = lang === 'zh' ? product.descriptionZh : product.description;
@@ -17,7 +19,10 @@ const description = lang === 'zh' ? product.descriptionZh : product.description;
 
 <a
   href={getLocalizedPath(`/${product.id}`, lang)}
-  class="group card-glow tilt-card p-6 lg:p-8 flex flex-col animate-on-scroll product-card"
+  class:list={[
+    'group card-glow tilt-card p-6 lg:p-8 flex flex-col product-card',
+    pinReveal ? 'product-card-pin' : 'animate-on-scroll',
+  ]}
   style={`--stagger: ${index}; --product-color: ${product.color}`}
 >
   <div class="flex items-start justify-between mb-5">

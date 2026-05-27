@@ -523,3 +523,81 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
+
+/* ============================================
+   HOME — Product card scroll reveal
+   ============================================ */
+.product-card-pin {
+  will-change: transform, opacity;
+  transform-origin: center center;
+}
+
+/* ============================================
+   HOME — CTA 光斑 & 磁吸按钮
+   ============================================ */
+.cta-section {
+  isolation: isolate;
+}
+
+.cta-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(520px, 80vw);
+  height: min(520px, 80vw);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 107, 0.35) 0%,
+    rgba(249, 115, 22, 0.15) 35%,
+    transparent 68%
+  );
+  mix-blend-mode: screen;
+  transition: opacity 0.25s ease;
+}
+
+.cta-spotlight-secondary {
+  width: min(280px, 50vw);
+  height: min(280px, 50vw);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.22) 0%,
+    transparent 70%
+  );
+  mix-blend-mode: overlay;
+}
+
+.cta-section.is-spotlight-active .cta-spotlight {
+  opacity: 1;
+}
+
+/* 磁吸：主区按钮 + CTA 按钮 */
+main .btn-primary,
+main .btn-secondary,
+main .cta-btn-primary,
+main .cta-btn-secondary {
+  will-change: transform;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.35s ease, filter 0.35s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+main .btn-primary.is-magnetic-hover,
+main .btn-secondary.is-magnetic-hover {
+  box-shadow: 0 10px 32px color-mix(in srgb, var(--color-accent) 28%, transparent);
+}
+
+main .cta-btn-primary.is-magnetic-hover {
+  filter: brightness(1.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+main .cta-btn-secondary.is-magnetic-hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}

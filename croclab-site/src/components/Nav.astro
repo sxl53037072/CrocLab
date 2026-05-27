@@ -28,15 +28,13 @@ const otherLangLabel = languages[otherLang];
 
 function getSwitchPath(): string {
   let path = currentPath;
-  if (path.endsWith('/')) path = path.slice(0, -1);
-  if (!path) path = '/';
+  if (!path.endsWith('/')) path = `${path}/`;
 
   if (lang === 'en') {
-    return path === '/' ? '/zh' : `/zh${path}`;
-  } else {
-    const stripped = path.replace(/^\/zh/, '');
-    return stripped || '/';
+    return path === '/' ? '/zh/' : `/zh${path}`;
   }
+  const stripped = path.replace(/^\/zh\/?/, '/');
+  return stripped;
 }
 const switchPath = getSwitchPath();
 ---

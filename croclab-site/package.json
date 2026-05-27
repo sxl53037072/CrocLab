@@ -15,6 +15,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@supabase/supabase-js": "^2.105.3",
     "astro": "^4.16.0",
+    "gsap": "^3.15.0",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.6.0"
   }
